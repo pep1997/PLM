@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="PLM">
+  <defs>
+    <linearGradient id="plmi-or" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7D493"/><stop offset="1" stop-color="#E3A84B"/>
+    </linearGradient>
+    <radialGradient id="plmi-fond" cx="50%" cy="34%" r="72%">
+      <stop offset="0" stop-color="#17A65A"/><stop offset="1" stop-color="#08532C"/>
+    </radialGradient>
+  </defs>
+  <path d="M88.69,30.92 L100.00,1.00 L111.31,30.92 Z M124.74,34.52 L149.50,14.26 L144.34,45.83 Z M154.17,55.66 L185.74,50.50 L165.48,75.26 Z M169.08,88.69 L199.00,100.00 L169.08,111.31 Z M165.48,124.74 L185.74,149.50 L154.17,144.34 Z M144.34,154.17 L149.50,185.74 L124.74,165.48 Z M111.31,169.08 L100.00,199.00 L88.69,169.08 Z M75.26,165.48 L50.50,185.74 L55.66,154.17 Z M45.83,144.34 L14.26,149.50 L34.52,124.74 Z M30.92,111.31 L1.00,100.00 L30.92,88.69 Z M34.52,75.26 L14.26,50.50 L45.83,55.66 Z M55.66,45.83 L50.50,14.26 L75.26,34.52 Z" fill="url(#plmi-or)"/>
+  <circle cx="100" cy="100" r="75" fill="url(#plmi-fond)"/>
+  <circle cx="100" cy="100" r="75" fill="none" stroke="url(#plmi-or)" stroke-width="8"/>
+  <g transform="translate(42.00,71.94) scale(0.9355)"><g fill="none" stroke="#FFF3DC" stroke-width="13" stroke-linecap="butt" stroke-linejoin="miter"><path d="M6.5,60 V6.5 H20 A11,11 0 0 1 20,28.5 H6.5" transform="translate(0.0,0)"/><path d="M6.5,0 V53.5 H30" transform="translate(40.5,0)"/><path d="M6.5,60 V6.5 L22,33 L37.5,6.5 V60" transform="translate(80.0,0)"/></g></g>
+</svg>
