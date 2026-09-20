@@ -1,6 +1,14 @@
 # PLM — site vitrine
 
-Site de **PLM, logiciels de gestion** — <https://plmgestion.com>
+Site de **PLM, logiciels de gestion** — <https://pep1997.github.io/PLM/>
+
+> Le domaine `plmgestion.com` n'est pas encore acquis. Tant qu'il ne l'est
+> pas, le site vit sur l'adresse GitHub ci-dessus, et c'est elle qui est
+> écrite dans les adresses canoniques et dans `og:image` — une image
+> d'aperçu pointée sur un domaine qui n'existe pas ne s'affiche jamais
+> dans WhatsApp. Le jour de l'achat : poser un fichier `CNAME` contenant
+> le domaine, changer la constante `SITE` dans `Site PLM/v2/_construire.js`,
+> republier.
 
 Neuf logiciels de gestion pour les entreprises et institutions
 ivoiriennes : clinique, hôtel, restaurant, maquis, dépôt de boissons,
@@ -37,10 +45,11 @@ git add -A && git commit -m "Mise à jour du site" && git push
 
 ## Le fichier CNAME
 
-Il porte le domaine servi. **Ne pas le supprimer** : GitHub le lit comme la
-source de vérité du domaine personnalisé, et un déploiement qui ne le
-contient pas désactive le réglage — le site retombe sur l'adresse
-`github.io` sans que rien ne le signale.
+Il n'y en a pas : le domaine n'est pas encore acheté. Quand il le sera,
+**ne jamais le supprimer** : GitHub le lit comme la source de vérité du
+domaine personnalisé, et un déploiement qui ne le contient pas désactive
+le réglage — le site retombe sur l'adresse `github.io` sans que rien ne
+le signale.
 
 ---
 
