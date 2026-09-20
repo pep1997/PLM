@@ -1,0 +1,275 @@
+/* ════════════════════════════════════════════════════════════════════
+   SITE PLM — une seule feuille
+   ────────────────────────────────────────────────────────────────────
+   Guilloché serré (le motif des billets), noir premium pour les unes,
+   crème et cadres noirs pour l'éditorial. Aucune police distante :
+   Georgia pour les titres, la police du système pour le texte.
+   ════════════════════════════════════════════════════════════════════ */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --creme:#F7F2E7; --creme2:#EFE6D5; --encre:#1A140E; --gris:#6B6053;
+  --or:#C8963E; --or-clair:#F0D08A; --vert:#1B5A3C; --terre:#9C4A1E;
+  --nuit:#120E09;
+}
+html{scroll-behavior:smooth}
+body{background:var(--creme);color:var(--encre);
+  font:16px/1.62 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.serif{font-family:Georgia,"Times New Roman",serif}
+.cadre{max-width:1700px;margin:0 auto;padding:0 68px}
+
+/* ── LE GUILLOCHÉ ──────────────────────────────────────────────────
+   Trois trames de pas différents : cercles, croisillons, rayures.
+   Serré comme un billet, assez pâle pour qu'on lise par-dessus. */
+.guilloche{
+  background-color:var(--creme);
+  background-image:
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%231A140E' stroke-opacity='.13' stroke-width='.6'%3E%3Ccircle cx='24' cy='24' r='21'/%3E%3Ccircle cx='24' cy='24' r='15'/%3E%3Ccircle cx='24' cy='24' r='9'/%3E%3Ccircle cx='24' cy='24' r='3'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg fill='none' stroke='%231A140E' stroke-opacity='.09' stroke-width='.5'%3E%3Cpath d='M0 0L16 16M16 0L0 16'/%3E%3C/g%3E%3C/svg%3E"),
+    repeating-linear-gradient(90deg, rgba(26,20,14,.045) 0 1px, transparent 1px 7px);
+  background-size:48px 48px, 16px 16px, auto}
+.guilloche-sombre{
+  background-color:var(--nuit);color:var(--creme);
+  background-image:
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23C8963E' stroke-opacity='.22' stroke-width='.6'%3E%3Ccircle cx='24' cy='24' r='21'/%3E%3Ccircle cx='24' cy='24' r='15'/%3E%3Ccircle cx='24' cy='24' r='9'/%3E%3Ccircle cx='24' cy='24' r='3'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg fill='none' stroke='%23C8963E' stroke-opacity='.12' stroke-width='.5'%3E%3Cpath d='M0 0L16 16M16 0L0 16'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(1100px 620px at 50% 0%, rgba(200,150,62,.16), transparent 70%);
+  background-size:48px 48px, 16px 16px, auto}
+
+/* ── BARRE ─────────────────────────────────────────────────────────── */
+header{border-bottom:2px solid var(--encre);background:rgba(247,242,231,.94);
+  backdrop-filter:blur(10px);position:sticky;top:0;z-index:40}
+.barre{display:flex;align-items:center;gap:32px;height:92px}
+.logo{display:flex;align-items:center;gap:13px;flex-shrink:0}
+.logo b{font-weight:900;letter-spacing:.2em;font-size:15px;display:block}
+.logo small{display:block;font-size:10px;letter-spacing:.16em;color:var(--gris);font-weight:700}
+nav{margin-left:auto;display:flex;gap:24px;font-size:12px;text-transform:uppercase;
+  letter-spacing:.11em;font-weight:700;color:var(--gris)}
+nav a:hover,nav a.actif{color:var(--encre)}
+.cta{background:var(--terre);color:var(--creme);font-weight:800;padding:14px 22px;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.cta:hover{background:var(--encre)}
+
+/* ── UNE ───────────────────────────────────────────────────────────── */
+.une,.une-produit{border-bottom:2px solid var(--encre)}
+.une .cadre,.une-produit .cadre{padding-top:84px;padding-bottom:68px}
+.chapo{display:inline-flex;align-items:center;gap:12px;color:var(--or);letter-spacing:.28em;
+  font-size:12px;font-weight:800;text-transform:uppercase}
+.chapo:before{content:"";width:54px;height:1px;background:currentColor}
+h1{font-size:clamp(40px,6vw,104px);line-height:.99;letter-spacing:-.03em;margin:22px 0 18px;max-width:17ch}
+h1 em{font-style:italic;color:var(--or)}
+.une .intro,.une-produit .intro{font-size:20px;color:#D9CFBE;max-width:64ch}
+.accroche{font-size:26px;color:var(--creme);max-width:46ch;margin-bottom:12px}
+.retour{display:inline-block;margin-bottom:22px;font-size:12.5px;letter-spacing:.1em;
+  text-transform:uppercase;font-weight:700;color:#C6BAA6}
+.une-produit .chapo{display:flex}
+.retour:hover{color:var(--or)}
+.actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn{padding:16px 26px;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
+.btn.plein{background:var(--or);color:#1A1205}
+.btn.plein:hover{background:var(--or-clair)}
+.btn.vide{border:2px solid rgba(247,242,231,.4);color:var(--creme)}
+.btn.vide:hover{border-color:var(--or);color:var(--or)}
+.bandeau{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;
+  border-top:1px solid rgba(200,150,62,.4)}
+.bandeau div{padding:24px;border-right:1px solid rgba(200,150,62,.25)}
+.bandeau div:last-child{border-right:0}
+.bandeau b{display:block;font-size:40px;line-height:1}
+.bandeau span{font-size:11.5px;color:#B9AD99;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+
+/* ── ÉCRAN VEDETTE ─────────────────────────────────────────────────── */
+.vedette{border-bottom:2px solid var(--encre);background:var(--creme2)}
+.vedette .cadre{padding-top:56px;padding-bottom:56px}
+.vedette figure{border:2px solid var(--encre);background:#fff;box-shadow:22px 22px 0 rgba(26,20,14,.10)}
+.vedette figcaption{display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:18px 24px;border-top:2px solid var(--encre);font-size:14px;color:var(--gris)}
+.vedette figcaption b{color:var(--encre);font-size:16px}
+
+/* ── SECTIONS ──────────────────────────────────────────────────────── */
+section{padding:100px 0}
+h2{font-size:clamp(32px,4vw,62px);letter-spacing:-.03em;max-width:20ch;margin-bottom:14px}
+.intro{font-size:18.5px;color:var(--gris);max-width:72ch;margin-bottom:52px}
+
+/* ── CATALOGUE ─────────────────────────────────────────────────────── */
+.journal{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.art{background:#fff;border:2px solid var(--encre);display:flex;flex-direction:column;
+  box-shadow:14px 14px 0 rgba(26,20,14,.07);transition:transform .18s ease,box-shadow .18s ease}
+.art:hover{transform:translate(-3px,-3px);box-shadow:18px 18px 0 rgba(26,20,14,.12)}
+.art .vue{position:relative;border-bottom:2px solid var(--encre);overflow:hidden;aspect-ratio:16/10;display:block}
+.art .vue img{width:100%;height:100%;object-fit:cover;object-position:top left}
+.art .bande{position:absolute;left:0;top:0;bottom:0;width:8px;z-index:2}
+.art .txt{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.art .metier{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:900}
+.art h3{font-size:27px;letter-spacing:-.018em}
+.art p{font-size:15.5px;color:var(--gris)}
+.art ul{list-style:none;border-top:1px solid rgba(26,20,14,.16);padding-top:12px;margin-top:4px}
+.art li{font-size:14px;padding:6px 0 6px 18px;position:relative;border-bottom:1px dotted rgba(26,20,14,.18)}
+.art li:last-child{border-bottom:0}
+.art li:before{content:"";position:absolute;left:0;top:14px;width:9px;height:2px;background:currentColor;opacity:.7}
+.art .lien{margin-top:auto;padding-top:14px;font-weight:800;font-size:13px;letter-spacing:.06em}
+
+/* ── SOCLE ─────────────────────────────────────────────────────────── */
+.socle{border-top:2px solid var(--encre);border-bottom:2px solid var(--encre)}
+.socle h2{color:var(--creme)}
+.socle .intro{color:#C6BAA6}
+.socle-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:42px 54px}
+.socle h4{font-size:21px;margin:10px 0 8px}
+.socle p{color:#C6BAA6;font-size:15.5px}
+.socle .num{color:var(--or);font-weight:900;letter-spacing:.22em;font-size:12px}
+
+/* ── PAGE LOGICIEL ─────────────────────────────────────────────────── */
+.distinctions .trois{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.distinctions .trois div{border-top:2px solid var(--encre);padding-top:18px}
+.distinctions .num{font-weight:900;letter-spacing:.2em;font-size:13px;display:block;margin-bottom:8px}
+.distinctions p{font-size:18px}
+.ecrans .ecran{display:grid;grid-template-columns:1.55fr 1fr;gap:38px;align-items:center;
+  margin-bottom:56px}
+.ecrans .ecran.inverse{grid-template-columns:1fr 1.55fr}
+.ecrans .ecran.inverse .image{order:2}
+.ecrans .image{border:2px solid var(--encre);background:#fff;box-shadow:16px 16px 0 rgba(26,20,14,.08)}
+.ecrans figcaption{display:flex;flex-direction:column;gap:10px}
+.ecrans figcaption b{font-size:30px;letter-spacing:-.02em}
+.ecrans figcaption span{font-size:17px;color:var(--gris)}
+.ecrans .pastille{width:44px;height:44px;border-radius:50%;color:#fff;font-weight:900;font-size:15px;
+  display:flex;align-items:center;justify-content:center}
+.technique h2{color:var(--creme)}
+.technique dl{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(200,150,62,.3);
+  border:1px solid rgba(200,150,62,.3)}
+.technique dl > div{background:var(--nuit);padding:22px 24px}
+.technique dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--or);font-weight:800}
+.technique dd{font-size:16px;margin-top:6px}
+.technique .actions{margin-top:38px}
+.voisins .quatre{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.voisin{background:#fff;border:2px solid var(--encre);display:block;position:relative;
+  box-shadow:10px 10px 0 rgba(26,20,14,.07)}
+.voisin img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-bottom:2px solid var(--encre)}
+.voisin .bande{position:absolute;left:0;top:0;width:7px;bottom:0;z-index:2}
+.voisin .nom{display:block;padding:16px 18px}
+.voisin .nom b{display:block;font-size:17px}
+.voisin .nom span{font-size:13px;color:var(--gris)}
+
+/* ── TARIFS · CONTACT · APPEL ──────────────────────────────────────── */
+.appel{background:var(--creme2);border-top:2px solid var(--encre)}
+.appel .actions .btn.vide{border-color:var(--encre);color:var(--encre)}
+.offres{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:34px}
+.offre{background:#fff;border:2px solid var(--encre);padding:30px 28px;box-shadow:12px 12px 0 rgba(26,20,14,.07)}
+.offre.mise-en-avant{background:var(--nuit);color:var(--creme);border-color:var(--encre)}
+.offre h3{font-size:26px;margin-bottom:8px}
+.offre .prix{font-size:15px;color:var(--or);font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:16px}
+.offre ul{list-style:none}
+.offre li{padding:8px 0 8px 20px;position:relative;font-size:15.5px;border-bottom:1px dotted rgba(26,20,14,.18)}
+.offre.mise-en-avant li{border-color:rgba(200,150,62,.3)}
+.offre li:before{content:"";position:absolute;left:0;top:17px;width:10px;height:2px;background:var(--or)}
+.note{font-size:15.5px;color:var(--gris);max-width:80ch}
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.contact h3{font-size:24px;margin-bottom:10px}
+.contact .grand{font-size:24px;font-weight:700;margin-bottom:8px}
+.contact p{color:var(--gris)}
+.contact ul{list-style:none;color:var(--gris)}
+.contact li{padding:6px 0 6px 18px;position:relative}
+.contact li:before{content:"";position:absolute;left:0;top:14px;width:9px;height:2px;background:var(--or)}
+
+/* ── PIED ──────────────────────────────────────────────────────────── */
+footer{border-top:2px solid var(--encre);background:var(--creme2)}
+.pied{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:44px;padding-bottom:44px;
+  flex-wrap:wrap;font-size:14px;color:var(--gris)}
+.pied b{display:block;color:var(--encre)}
+.pied .liens{display:flex;gap:22px;flex-wrap:wrap}
+.pied .liens a:hover{color:var(--encre)}
+
+/* ── TÉLÉPHONE ─────────────────────────────────────────────────────── */
+/* La barre passe sur deux lignes bien avant d'être à l'étroit : mesuré,
+   le bouton d'appel débordait de 151 px entre 760 et 1024 px. */
+@media (max-width:1080px){
+  .barre{height:auto;padding:14px 0;flex-wrap:wrap;gap:14px}
+  nav{order:3;width:100%;margin-left:0;gap:18px;flex-wrap:wrap}
+  .cta{margin-left:auto}
+}
+@media (max-width:1100px){
+  .cadre{padding:0 28px}
+  .journal{grid-template-columns:repeat(2,1fr)}
+  .socle-grille,.distinctions .trois,.contact,.offres{grid-template-columns:repeat(2,1fr)}
+  .technique dl{grid-template-columns:repeat(2,1fr)}
+  .voisins .quatre{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .barre{height:auto;padding:14px 0;flex-wrap:wrap;gap:14px}
+  nav{order:3;width:100%;margin-left:0;gap:16px;flex-wrap:wrap}
+  .cta{padding:12px 16px;font-size:11px}
+  .une .cadre,.une-produit .cadre{padding-top:52px;padding-bottom:46px}
+  section{padding:64px 0}
+  .bandeau{grid-template-columns:repeat(2,1fr)}
+  .bandeau div{border-right:0;border-bottom:1px solid rgba(200,150,62,.25)}
+  .coords{grid-template-columns:1fr}
+  .coord{padding:20px 18px}
+  .coord .tel{font-size:21px;word-break:break-word}
+  .coord.courriel .tel{font-size:16px}
+  .coord .whatsapp{margin-left:0;display:block;margin-top:6px}
+  /* Le tableau des prix : deux colonnes suffisent sur un telephone. */
+  .grille-prix tr > *:nth-child(2){display:none}
+  .grille-prix td a{white-space:normal}
+  .grille-prix{table-layout:fixed;width:100%}
+  .grille-prix th,.grille-prix td{padding:12px 13px}
+  .grille-prix .montant{font-size:18px}
+  .grille-prix td a{font-size:14.5px;gap:8px}
+  .grille-prix thead th{font-size:10px;letter-spacing:.1em}
+  .grille-prix{box-shadow:6px 6px 0 rgba(26,20,14,.07)}
+  .prix-produit b{font-size:25px}
+  .journal,.socle-grille,.distinctions .trois,.contact,.offres,
+  .voisins .quatre,.technique dl{grid-template-columns:1fr}
+  .ecrans .ecran,.ecrans .ecran.inverse{grid-template-columns:1fr;gap:20px}
+  .ecrans .ecran.inverse .image{order:0}
+  .vedette figure,.art,.offre,.voisin,.ecrans .image{box-shadow:8px 8px 0 rgba(26,20,14,.08)}
+  .accroche{font-size:21px}
+  .ecrans figcaption b{font-size:24px}
+}
+
+/* ── LES PRIX ──────────────────────────────────────────────────────── */
+.prix-produit{margin-top:20px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  font-size:15px;color:rgba(247,242,231,.78)}
+.prix-produit b{font-family:var(--serif);font-size:30px;color:var(--or);letter-spacing:-.02em}
+.prix-produit .sep{opacity:.45}
+.prix-carte{margin-top:auto;padding-top:12px;font-size:14px;color:var(--gris)}
+.prix-carte b{font-family:var(--serif);font-size:22px;color:var(--encre);margin-right:7px}
+.art .lien{margin-top:10px}
+
+.grille-prix{width:100%;border-collapse:collapse;border:2px solid var(--encre);background:#fff;
+  box-shadow:12px 12px 0 rgba(26,20,14,.07)}
+.grille-prix th,.grille-prix td{padding:15px 18px;text-align:left;border-bottom:1px solid rgba(26,20,14,.16)}
+.grille-prix thead th{background:var(--nuit);color:var(--creme);font-size:11.5px;
+  letter-spacing:.16em;text-transform:uppercase;font-weight:800;border-bottom:2px solid var(--encre)}
+.grille-prix td a{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px}
+.grille-prix .point{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.grille-prix .pour{color:var(--gris);font-size:14px}
+.grille-prix .montant{text-align:right;font-family:var(--serif);font-size:21px;white-space:nowrap}
+.grille-prix tbody tr:last-child td{border-bottom:0}
+.grille-prix .sup td{background:var(--creme2);font-weight:700}
+.grille-prix .sup .montant{color:var(--terre)}
+
+/* ── NOS REPRÉSENTANTS ─────────────────────────────────────────────── */
+.coords{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.coord{background:#fff;border:2px solid var(--encre);padding:24px 26px;
+  box-shadow:10px 10px 0 rgba(26,20,14,.07)}
+.coord .ville{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:900;color:var(--or);margin-bottom:8px}
+.coord .tel{display:inline-block;font-family:var(--serif);font-size:26px;letter-spacing:-.02em}
+.coord .whatsapp{display:inline-block;margin-left:12px;font-size:12px;font-weight:800;
+  letter-spacing:.08em;text-transform:uppercase;color:#1F7A4C;border-bottom:1px solid currentColor}
+.coord b{display:block;margin-top:12px;font-size:16px}
+.coord .role{display:block;font-size:13.5px;color:var(--gris);margin-top:3px;line-height:1.5}
+.coord.courriel .tel{font-size:21px}
+
+/* ── LA PREUVE DU TICKET ───────────────────────────────────────────── */
+.preuve{background:var(--creme2);border-top:2px solid var(--encre);border-bottom:2px solid var(--encre)}
+.preuve .cadre{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.preuve-texte h2{font-size:38px;letter-spacing:-.022em;margin:10px 0 14px}
+.preuve-texte p{font-size:16.5px;color:var(--gris);line-height:1.7}
+.preuve-image{border:2px solid var(--encre);background:#fff;box-shadow:14px 14px 0 rgba(26,20,14,.08)}
+.preuve-image img{display:block;width:100%;max-height:640px;object-fit:contain;background:#fff;padding:12px}
+@media (max-width:900px){
+  .preuve .cadre{grid-template-columns:1fr;gap:26px}
+  .preuve-texte h2{font-size:30px}
+}

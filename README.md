@@ -2,8 +2,9 @@
 
 Site de **PLM, logiciels de gestion** — <https://plmgestion.com>
 
-Cinq logiciels de gestion pour les entreprises ivoiriennes : clinique,
-restaurant, maquis, dépôt de boissons, boutique. Installés sur le PC du
+Neuf logiciels de gestion pour les entreprises et institutions
+ivoiriennes : clinique, hôtel, restaurant, maquis, dépôt de boissons,
+boutique, magasin, école, comptabilité. Installés sur les postes du
 client, sans internet, sans abonnement.
 
 ---
@@ -24,10 +25,13 @@ seule façon de ne pas exposer le reste.
 Tout ce dossier est **écrit par un script**. Une correction faite directement
 dans ces fichiers sera écrasée à la publication suivante, sans avertissement.
 
-Les modifications se font dans le dossier de travail, puis :
+Les prix, les numéros de téléphone et les textes se modifient dans
+`Site PLM2\contenu.js` — et nulle part ailleurs. Puis :
 
 ```bash
-node assets/_publier.js --vers "<chemin vers ce dépôt>"
+# depuis « Desktop\Site PLM » :
+node v2/_construire.js --publier     # refabrique les pages
+node v2/_deployer.js                 # copie ici pages + images citées
 git add -A && git commit -m "Mise à jour du site" && git push
 ```
 
