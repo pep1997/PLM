@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://plmgestion.com/sitemap.xml
