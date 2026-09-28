@@ -27,16 +27,17 @@
 <meta name="twitter:description" content="Neuf logiciels métier pour les commerces et institutions ivoiriennes : clinique, hôtel, restaurant, maquis, dépôt, boutique, magasin, école, comptabilité. Sans internet, sans abonnement.">
 <meta name="twitter:image" content="https://pep1997.github.io/PLM/assets/og.jpg">
 <link rel="stylesheet" href="assets/site-v2.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="guilloche">
 <header><div class="cadre barre">
     <a class="logo" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="44" height="44" role="img" aria-label="PLM"><defs><radialGradient id="p2c-fond" cx="50%" cy="32%" r="78%"><stop offset="0" stop-color="#2E8C5F"/><stop offset=".62" stop-color="#14522F"/><stop offset="1" stop-color="#0A3320"/></radialGradient><linearGradient id="p2c-or" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6DFAA"/><stop offset=".45" stop-color="#D9AB57"/><stop offset="1" stop-color="#A9781F"/></linearGradient><linearGradient id="p2c-or2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DFAA"/><stop offset="1" stop-color="#C8963E"/></linearGradient></defs><circle cx="60" cy="60" r="56" fill="url(#p2c-fond)"/><g fill="none" stroke="url(#p2c-or)" stroke-width="0.9" opacity="0.9"><circle cx="60" cy="60" r="52.5"/><circle cx="60" cy="60" r="46.5"/></g><circle cx="60" cy="60" r="43" fill="none" stroke="url(#p2c-or)" stroke-width="2.2"/><text x="60" y="68" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="30" font-weight="700" letter-spacing=".6" fill="url(#p2c-or2)">PLM</text><rect x="42" y="77" width="36" height="3.2" rx="1.6" fill="url(#p2c-or2)"/></svg>
       <span><b>PLM</b><small>LOGICIELS DE GESTION</small></span></a>
-    <nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <nav id="menu">
       <a href="index.html#catalogue" class="actif">Les neuf</a>
       <a href="index.html#socle">Le socle</a>
       <a href="tarifs.html">Tarifs</a>
-      <a href="index.html#demonstration">Démonstration</a>
       <a href="contact.html">Nous joindre</a>
     </nav>
     <a class="cta" href="contact.html">Demander une démonstration</a>
@@ -54,10 +55,30 @@
   <div class="bandeau"><div><b class="serif">9</b><span>logiciels métier</span></div><div><b class="serif">0 F</b><span>d’abonnement</span></div><div><b class="serif">100 %</b><span>hors ligne</span></div><div><b class="serif">5</b><span>postes reliés en Wi-Fi</span></div></div>
 </div></div>
 
+<section class="testeurs"><div class="cadre testeurs-grille">
+  <div class="testeurs-texte">
+    <span class="chapo">Programme testeurs · 9 places</span>
+    <h2 class="serif">Testez gratuitement, <em>chez vous</em>, de 1 à 3 mois.</h2>
+    <p>Nous retenons <b>un établissement par logiciel</b> — un restaurant, un maquis, un hôtel, un dépôt,
+      une boutique, un magasin, une clinique, une école, une PME. Installation et formation comprises.
+      À la fin de l’essai, la licence vous est proposée <b>à moitié prix</b>.</p>
+    <p class="t-exigence">Condition : un ordinateur Windows avec <b>8 Go de RAM minimum</b>.</p>
+  </div>
+  <div class="testeurs-offre">
+    <div class="t-chiffres">
+      <div><b class="serif">1 à 3</b><span>mois d’essai gratuit</span></div>
+      <div><b class="serif">9</b><span>places, une par logiciel</span></div>
+      <div><b class="serif">−50&nbsp;%</b><span>sur la licence à vie</span></div>
+    </div>
+    <a class="btn vert large" href="https://wa.me/4915205457151?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20place%20au%20programme%20testeurs%20PLM%20pour%20mon%20%C3%A9tablissement." target="_blank" rel="noopener">Réserver ma place sur WhatsApp · +49 152 054 571 51</a>
+  </div>
+</div></section>
+
 <div class="vedette"><div class="cadre">
   <figure><img class="" loading="lazy" decoding="async"
+    width="4500" height="2820"
     src="assets/img/restaurant-04-plan-de-salle.webp"
-    srcset="assets/vign/restaurant-04-plan-de-salle.webp 640w, assets/img/restaurant-04-plan-de-salle.webp 1600w, assets/img2x/restaurant-04-plan-de-salle.webp 3200w"
+    srcset="assets/vign/restaurant-04-plan-de-salle.webp 640w, assets/img/restaurant-04-plan-de-salle.webp 1600w, assets/img2x/restaurant-04-plan-de-salle.webp 3200w, assets/img4x/restaurant-04-plan-de-salle.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt="">
     <figcaption><b>Pepalla Restaurant — le plan de salle</b>
       <span>Chaque table dit son état, son serveur, son montant et son attente.</span></figcaption></figure>
@@ -67,123 +88,115 @@
   <h2 class="serif">Neuf métiers, neuf logiciels.</h2>
   <p class="intro">Même comptabilité, même gestion de stock, même socle multi-postes. Ce qui change,
     c’est le métier : un dépôt compte des casiers, une école des élèves, une clinique des patients.</p>
+  <p class="annonce-promo"><b>Offre de lancement</b><span>Remise de 15 % sur les neuf logiciels, jusqu’au 31 décembre 2026.</span></p>
   <div class="journal">
-    <article class="art">
-      <a class="vue" href="logiciel-restaurant.html"><span class="bande" style="background:#C2410C"></span>
-        <img class="" loading="lazy" decoding="async"
-    src="assets/img/restaurant-04-plan-de-salle.webp"
-    srcset="assets/vign/restaurant-04-plan-de-salle.webp 640w, assets/img/restaurant-04-plan-de-salle.webp 1600w, assets/img2x/restaurant-04-plan-de-salle.webp 3200w"
-    sizes="(max-width: 900px) 100vw, 1200px" alt=""></a>
+    <article class="art" style="--c:#C2410C">
+      <a class="vue" href="logiciel-restaurant.html" aria-label="Pepalla Restaurant — Restaurants avec service en salle">
+        <svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 33h32M12 33a12 12 0 0 1 24 0M24 15v-5M20 10h8"/></svg>
+        <span class="etiquette">&minus;15&nbsp;%</span>
+        <span class="rang serif">01</span></a>
       <div class="txt">
         <span class="metier" style="color:#C2410C">Restaurants avec service en salle</span>
         <h3 class="serif">Pepalla Restaurant</h3>
         <p>La salle, la cuisine et la caisse parlent enfin la même langue.</p>
         <ul><li>Un plan de salle où l’on voit d’un œil les tables occupées, l’attente et l’addition en cours</li><li>Un écran de cuisine qui reçoit les bons et renvoie « prêt à servir »</li><li>Des ardoises par table, que le serveur remet au caissier en fin de service</li></ul>
-        <p class="prix-carte"><b>600 000 F</b> <span>achat unique</span></p>
+        <p class="prix-carte"><s class="prix-ancien">600 000 F</s> <b>510 000 F</b> <span>achat unique</span></p>
         <a class="lien" href="logiciel-restaurant.html" style="color:#C2410C">Voir les écrans →</a>
-      </div></article><article class="art">
-      <a class="vue" href="logiciel-maquis.html"><span class="bande" style="background:#8E1F3C"></span>
-        <img class="" loading="lazy" decoding="async"
-    src="assets/img/maquis-04-plan-de-salle.webp"
-    srcset="assets/vign/maquis-04-plan-de-salle.webp 640w, assets/img/maquis-04-plan-de-salle.webp 1600w, assets/img2x/maquis-04-plan-de-salle.webp 3200w"
-    sizes="(max-width: 900px) 100vw, 1200px" alt=""></a>
+      </div></article><article class="art" style="--c:#8E1F3C">
+      <a class="vue" href="logiciel-maquis.html" aria-label="Pepalla Maquis — Maquis, bars et buvettes">
+        <svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M20 7h8v7l4 7v21a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V21l4-7zM16 27h16"/></svg>
+        <span class="etiquette">&minus;15&nbsp;%</span>
+        <span class="rang serif">02</span></a>
       <div class="txt">
         <span class="metier" style="color:#8E1F3C">Maquis, bars et buvettes</span>
         <h3 class="serif">Pepalla Maquis</h3>
         <p>Compté au casier près, du premier client à la fin de service.</p>
         <ul><li>Casiers, consignes et bouteilles vides suivis comme de l’argent</li><li>Une caisse rapide, faite pour servir debout, avec les tables</li><li>Une fin de service qui dit l’écart, tout de suite, sans calcul à la main</li></ul>
-        <p class="prix-carte"><b>450 000 F</b> <span>achat unique</span></p>
+        <p class="prix-carte"><s class="prix-ancien">450 000 F</s> <b>380 000 F</b> <span>achat unique</span></p>
         <a class="lien" href="logiciel-maquis.html" style="color:#8E1F3C">Voir les écrans →</a>
-      </div></article><article class="art">
-      <a class="vue" href="logiciel-hotel.html"><span class="bande" style="background:#B9762A"></span>
-        <img class="" loading="lazy" decoding="async"
-    src="assets/img/hotel-03-planning-chambres.webp"
-    srcset="assets/vign/hotel-03-planning-chambres.webp 640w, assets/img/hotel-03-planning-chambres.webp 1600w, assets/img2x/hotel-03-planning-chambres.webp 3200w"
-    sizes="(max-width: 900px) 100vw, 1200px" alt=""></a>
+      </div></article><article class="art" style="--c:#996122">
+      <a class="vue" href="logiciel-hotel.html" aria-label="Pepalla Hôtel — Hôtels, auberges et résidences">
+        <svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 35V17M7 27h34v8M41 35v-9a4 4 0 0 0-4-4H21v5M14 22a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/></svg>
+        <span class="etiquette">&minus;15&nbsp;%</span>
+        <span class="rang serif">03</span></a>
       <div class="txt">
-        <span class="metier" style="color:#B9762A">Hôtels, auberges et résidences</span>
+        <span class="metier" style="color:#996122">Hôtels, auberges et résidences</span>
         <h3 class="serif">Pepalla Hôtel</h3>
         <p>Le planning des chambres, la réception et le bar dans un seul logiciel.</p>
         <ul><li>Un planning des chambres qui montre la semaine d’un coup d’œil</li><li>Séjours, cautions, extras et ardoises réunis sur la note du client</li><li>Le bar et le restaurant intégrés, sans second logiciel</li></ul>
-        <p class="prix-carte"><b>700 000 F</b> <span>achat unique</span></p>
-        <a class="lien" href="logiciel-hotel.html" style="color:#B9762A">Voir les écrans →</a>
-      </div></article><article class="art">
-      <a class="vue" href="logiciel-depot.html"><span class="bande" style="background:#1D4ED8"></span>
-        <img class="" loading="lazy" decoding="async"
-    src="assets/img/depot-04-casiers.webp"
-    srcset="assets/vign/depot-04-casiers.webp 640w, assets/img/depot-04-casiers.webp 1600w, assets/img2x/depot-04-casiers.webp 3200w"
-    sizes="(max-width: 900px) 100vw, 1200px" alt=""></a>
+        <p class="prix-carte"><s class="prix-ancien">700 000 F</s> <b>590 000 F</b> <span>achat unique</span></p>
+        <a class="lien" href="logiciel-hotel.html" style="color:#996122">Voir les écrans →</a>
+      </div></article><article class="art" style="--c:#1D4ED8">
+      <a class="vue" href="logiciel-depot.html" aria-label="Pepalla Dépôt — Dépôts et distributeurs de boissons">
+        <svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 14h22v17H5zM27 21h6l5 5v5h-11z"/><circle cx="13" cy="33" r="3.4"/><circle cx="32" cy="33" r="3.4"/></svg>
+        <span class="etiquette">&minus;15&nbsp;%</span>
+        <span class="rang serif">04</span></a>
       <div class="txt">
         <span class="metier" style="color:#1D4ED8">Dépôts et distributeurs de boissons</span>
         <h3 class="serif">Pepalla Dépôt</h3>
         <p>Le casier, la livraison et l’argent du livreur — enfin tenus.</p>
         <ul><li>Vente au casier uniquement, consignes et casiers dehors suivis comme de l’argent</li><li>Livraisons, courses et argent chez les livreurs, sur un écran</li><li>Clients à crédit, relances et balance âgée</li></ul>
-        <p class="prix-carte"><b>500 000 F</b> <span>achat unique</span></p>
+        <p class="prix-carte"><s class="prix-ancien">500 000 F</s> <b>420 000 F</b> <span>achat unique</span></p>
         <a class="lien" href="logiciel-depot.html" style="color:#1D4ED8">Voir les écrans →</a>
-      </div></article><article class="art">
-      <a class="vue" href="logiciel-commerce.html"><span class="bande" style="background:#6D28D9"></span>
-        <img class="" loading="lazy" decoding="async"
-    src="assets/img/commerce-26-choix-metier.webp"
-    srcset="assets/vign/commerce-26-choix-metier.webp 640w, assets/img/commerce-26-choix-metier.webp 1600w, assets/img2x/commerce-26-choix-metier.webp 3200w"
-    sizes="(max-width: 900px) 100vw, 1200px" alt=""></a>
+      </div></article><article class="art" style="--c:#0E7490">
+      <a class="vue" href="logiciel-commerce.html" aria-label="Pepalla Commerce — Boutiques, quincailleries, commerces">
+        <svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 21h30v17H9zM7 21l4-9h26l4 9M20 38V28h8v10"/></svg>
+        <span class="etiquette">&minus;15&nbsp;%</span>
+        <span class="rang serif">05</span></a>
       <div class="txt">
-        <span class="metier" style="color:#6D28D9">Boutiques, quincailleries, commerces</span>
+        <span class="metier" style="color:#0E7490">Boutiques, quincailleries, commerces</span>
         <h3 class="serif">Pepalla Commerce</h3>
         <p>Une caisse claire, un stock juste, des comptes qui tiennent.</p>
         <ul><li>Sept métiers prêts à l’emploi — et on en coche plusieurs quand la boutique est mixte</li><li>Le catalogue du métier est fourni : catégories, caractéristiques, unités, articles courants</li><li>Et vous créez vos propres catégories et vos propres articles, autant que vous voulez</li></ul>
-        <p class="prix-carte"><b>580 000 F</b> <span>achat unique</span></p>
-        <a class="lien" href="logiciel-commerce.html" style="color:#6D28D9">Voir les écrans →</a>
-      </div></article><article class="art">
-      <a class="vue" href="logiciel-stock.html"><span class="bande" style="background:#0E7490"></span>
-        <img class="" loading="lazy" decoding="async"
-    src="assets/img/stock-04-inventaire.webp"
-    srcset="assets/vign/stock-04-inventaire.webp 640w, assets/img/stock-04-inventaire.webp 1600w, assets/img2x/stock-04-inventaire.webp 3200w"
-    sizes="(max-width: 900px) 100vw, 1200px" alt=""></a>
+        <p class="prix-carte"><s class="prix-ancien">580 000 F</s> <b>490 000 F</b> <span>achat unique</span></p>
+        <a class="lien" href="logiciel-commerce.html" style="color:#0E7490">Voir les écrans →</a>
+      </div></article><article class="art" style="--c:#6D28D9">
+      <a class="vue" href="logiciel-stock.html" aria-label="Pepalla Gestion de Stock — Magasins, grossistes, entrepôts">
+        <svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 11v27M39 11v27M9 20h30M9 29h30M9 38h30M14 13h8v7h-8zM26 22h9v7h-9z"/></svg>
+        <span class="etiquette">&minus;15&nbsp;%</span>
+        <span class="rang serif">06</span></a>
       <div class="txt">
-        <span class="metier" style="color:#0E7490">Magasins, grossistes, entrepôts</span>
+        <span class="metier" style="color:#6D28D9">Magasins, grossistes, entrepôts</span>
         <h3 class="serif">Pepalla Gestion de Stock</h3>
         <p>Ce qui entre, ce qui sort, ce qui reste — et ce que ça vaut.</p>
         <ul><li>Sans caisse : entrées, sorties et inventaires tracés, ligne par ligne</li><li>Valorisation du stock au coût moyen pondéré</li><li>Alertes de réapprovisionnement et rentabilité par article</li></ul>
-        <p class="prix-carte"><b>350 000 F</b> <span>achat unique</span></p>
-        <a class="lien" href="logiciel-stock.html" style="color:#0E7490">Voir les écrans →</a>
-      </div></article><article class="art">
-      <a class="vue" href="logiciel-clinique.html"><span class="bande" style="background:#1F7A4D"></span>
-        <img class="" loading="lazy" decoding="async"
-    src="assets/img/clinique-14-profil-etablissement.webp"
-    srcset="assets/vign/clinique-14-profil-etablissement.webp 640w, assets/img/clinique-14-profil-etablissement.webp 1600w, assets/img2x/clinique-14-profil-etablissement.webp 3200w"
-    sizes="(max-width: 900px) 100vw, 1200px" alt=""></a>
+        <p class="prix-carte"><s class="prix-ancien">350 000 F</s> <b>290 000 F</b> <span>achat unique</span></p>
+        <a class="lien" href="logiciel-stock.html" style="color:#6D28D9">Voir les écrans →</a>
+      </div></article><article class="art" style="--c:#1F7A4D">
+      <a class="vue" href="logiciel-clinique.html" aria-label="Gestion Clinique — Cliniques, cabinets et centres de santé">
+        <svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M19 9h10v10h10v10H29v10H19V29H9V19h10z"/></svg>
+        <span class="etiquette">&minus;15&nbsp;%</span>
+        <span class="rang serif">07</span></a>
       <div class="txt">
         <span class="metier" style="color:#1F7A4D">Cliniques, cabinets et centres de santé</span>
         <h3 class="serif">Gestion Clinique</h3>
         <p>Le dossier du patient, la caisse et la pharmacie au même endroit.</p>
-        <ul><li>Dossier patient complet : consultations, ordonnances, laboratoire, imagerie</li><li>Assurances et prises en charge gérées jusqu’au bordereau</li><li>Hospitalisation, lits et tour de garde suivis en direct</li><li>Vous déclarez ce que vous pratiquez : cabinet, maternité, polyclinique, dialyse, imagerie…</li><li>Actes médicaux, médicaments et consommables déjà au catalogue — il ne reste que vos tarifs</li></ul>
-        <p class="prix-carte"><b>850 000 F</b> <span>achat unique</span></p>
+        <ul><li>Dossier patient complet : consultations, ordonnances, laboratoire, imagerie</li><li>Assurances et prises en charge gérées jusqu’au bordereau</li><li>Hospitalisation, lits et tour de garde suivis en direct</li></ul>
+        <p class="prix-carte"><s class="prix-ancien">850 000 F</s> <b>720 000 F</b> <span>achat unique</span></p>
         <a class="lien" href="logiciel-clinique.html" style="color:#1F7A4D">Voir les écrans →</a>
-      </div></article><article class="art">
-      <a class="vue" href="logiciel-ecole.html"><span class="bande" style="background:#243B7A"></span>
-        <img class="" loading="lazy" decoding="async"
-    src="assets/img/ecole-03-eleves.webp"
-    srcset="assets/vign/ecole-03-eleves.webp 640w, assets/img/ecole-03-eleves.webp 1600w, assets/img2x/ecole-03-eleves.webp 3200w"
-    sizes="(max-width: 900px) 100vw, 1200px" alt=""></a>
+      </div></article><article class="art" style="--c:#243B7A">
+      <a class="vue" href="logiciel-ecole.html" aria-label="Pepalla École — Écoles et groupes scolaires">
+        <svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 11 6 19l18 8 18-8-18-8zM14 23v9c0 3.3 4.5 5.5 10 5.5s10-2.2 10-5.5v-9M39 21v10"/></svg>
+        <span class="etiquette">&minus;15&nbsp;%</span>
+        <span class="rang serif">08</span></a>
       <div class="txt">
         <span class="metier" style="color:#243B7A">Écoles et groupes scolaires</span>
         <h3 class="serif">Pepalla École</h3>
         <p>De l’inscription au bulletin, sans registre papier.</p>
         <ul><li>Élèves, classes, inscriptions et emploi du temps</li><li>Scolarité : appels de frais, règlements, créances et relances des familles</li><li>Notes, moyennes, rangs et bulletins imprimés</li></ul>
-        <p class="prix-carte"><b>750 000 F</b> <span>achat unique</span></p>
+        <p class="prix-carte"><s class="prix-ancien">750 000 F</s> <b>630 000 F</b> <span>achat unique</span></p>
         <a class="lien" href="logiciel-ecole.html" style="color:#243B7A">Voir les écrans →</a>
-      </div></article><article class="art">
-      <a class="vue" href="logiciel-compta.html"><span class="bande" style="background:#6B4226"></span>
-        <img class="" loading="lazy" decoding="async"
-    src="assets/img/compta-03-saisie.webp"
-    srcset="assets/vign/compta-03-saisie.webp 640w, assets/img/compta-03-saisie.webp 1600w, assets/img2x/compta-03-saisie.webp 3200w"
-    sizes="(max-width: 900px) 100vw, 1200px" alt=""></a>
+      </div></article><article class="art" style="--c:#6B4226">
+      <a class="vue" href="logiciel-compta.html" aria-label="Pepalla Comptabilité — PME qui tiennent leur comptabilité">
+        <svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 10v28M14 38h20M10 18h28M24 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4M10 18 5 29a5 5 0 0 0 10 0zM38 18l-5 11a5 5 0 0 0 10 0z"/></svg>
+        <span class="etiquette">&minus;15&nbsp;%</span>
+        <span class="rang serif">09</span></a>
       <div class="txt">
         <span class="metier" style="color:#6B4226">PME qui tiennent leur comptabilité</span>
         <h3 class="serif">Pepalla Comptabilité</h3>
         <p>SYSCOHADA révisé, système normal — tenue complète.</p>
         <ul><li>Écritures en partie double contrôlée, validées et scellées</li><li>Lettrage, rapprochement bancaire, immobilisations et clôture</li><li>Bilan, compte de résultat, TVA et DSF au format attendu</li></ul>
-        <p class="prix-carte"><b>815 000 F</b> <span>achat unique</span></p>
+        <p class="prix-carte"><s class="prix-ancien">815 000 F</s> <b>690 000 F</b> <span>achat unique</span></p>
         <a class="lien" href="logiciel-compta.html" style="color:#6B4226">Voir les écrans →</a>
       </div></article>
   </div>
@@ -193,7 +206,7 @@
   <h2 class="serif">Ce qui tient sous les neuf.</h2>
   <p class="intro">Sept engagements, les mêmes partout, de la clinique à la comptabilité.</p>
   <div class="socle-grille">
-    <div><span class="num">01</span><h4 class="serif">Sans internet</h4><p>Tout est sur votre ordinateur. Le réseau peut tomber, la caisse continue d’encaisser.</p></div><div><span class="num">02</span><h4 class="serif">Sans abonnement</h4><p>Vous payez une fois. Le logiciel vous appartient, personne ne peut l’éteindre.</p></div><div><span class="num">03</span><h4 class="serif">Vos données chez vous</h4><p>Base chiffrée sur le poste, sauvegardes automatiques, rien ne part au dehors.</p></div><div><span class="num">04</span><h4 class="serif">Jusqu’à cinq postes</h4><p>Les postes se parlent sur votre Wi-Fi ; chacun travaille même quand les autres sont éteints.</p></div><div><span class="num">05</span><h4 class="serif">Comptabilité SYSCOHADA</h4><p>La même comptabilité dans les neuf logiciels, au format que votre comptable attend.</p></div><div><span class="num">06</span><h4 class="serif">Le catalogue arrive fait</h4><p>Articles, catégories et unités déjà saisis — boissons et plats d’ici pour la restauration, actes et médicaments pour la clinique. Vous posez vos prix, vous vendez le jour même.</p></div><div><span class="num">07</span><h4 class="serif">Facture normalisée DGI</h4><p>La FNE est branchée sur la caisse : le ticket sort conforme, sans double saisie.</p></div>
+    <div><span class="num">01</span><h4 class="serif">Sans internet</h4><p>Tout est sur votre ordinateur. Le réseau peut tomber, la caisse continue d’encaisser.</p></div><div><span class="num">02</span><h4 class="serif">Sans abonnement</h4><p>Vous payez une fois. Le logiciel vous appartient, personne ne peut l’éteindre.</p></div><div><span class="num">03</span><h4 class="serif">Vos données chez vous</h4><p>Base chiffrée sur le poste, phrase de secours à vous seul, rien ne part au dehors.</p></div><div><span class="num">04</span><h4 class="serif">Jusqu’à cinq postes</h4><p>Les postes se parlent sur votre Wi-Fi ; chacun travaille même quand les autres sont éteints.</p></div><div><span class="num">05</span><h4 class="serif">Comptabilité SYSCOHADA</h4><p>La même comptabilité dans les neuf logiciels, au format que votre comptable attend.</p></div><div><span class="num">06</span><h4 class="serif">Le catalogue arrive fait</h4><p>Articles, catégories et unités déjà saisis — boissons et plats d’ici pour la restauration, actes et médicaments pour la clinique. Vous posez vos prix, vous vendez le jour même.</p></div><div><span class="num">07</span><h4 class="serif">Facture normalisée DGI</h4><p>La FNE est branchée sur la caisse : le ticket sort conforme, sans double saisie.</p></div>
   </div>
 </div></section>
 
@@ -202,11 +215,11 @@
     <span class="chapo">Facture normalisée DGI</span>
     <h2 class="serif">Le ticket, tel qu’il sort de la caisse.</h2>
     <p>Numéro de facture suivi et non réutilisable, TVA détaillée, enseigne et caissier : le ticket est produit par la caisse au moment de l’encaissement. Quand la facturation électronique est raccordée, la même vente part à la DGI depuis cet écran — sans ressaisie sur un autre logiciel, et sans carnet à côté.</p>
-
   </div>
   <figure class="preuve-image"><img class="" loading="lazy" decoding="async"
+    width="990" height="1188"
     src="assets/img/restaurant-25-ticket-dgi.webp"
-    srcset="assets/vign/restaurant-25-ticket-dgi.webp 640w, assets/img/restaurant-25-ticket-dgi.webp 1600w, assets/img2x/restaurant-25-ticket-dgi.webp 3200w"
+    srcset="assets/vign/restaurant-25-ticket-dgi.webp 640w, assets/img/restaurant-25-ticket-dgi.webp 1600w, assets/img2x/restaurant-25-ticket-dgi.webp 3200w, assets/img4x/restaurant-25-ticket-dgi.webp 990w"
     sizes="(max-width: 900px) 100vw, 1200px" alt=""></figure>
 </div></section>
 
@@ -231,5 +244,152 @@
   </div>
   <span class="copy">Propriété de PLM Groupe ®</span>
 </div></footer>
+<div class="barre-mobile" role="navigation" aria-label="Actions rapides">
+  <a class="bm-demo" href="contact.html">Démonstration</a>
+  <a class="bm-wa" href="https://wa.me/2250715297268?text=Bonjour%2C%0A%0AJe%20vous%20%C3%A9cris%20depuis%20votre%20site.%20Je%20souhaite%20une%20d%C3%A9monstration%20de%20vos%20logiciels%20de%20gestion.%0A%0AMon%20activit%C3%A9%20%3A%20%0AMa%20ville%20%3A%20%0ANombre%20de%20postes%20%3A%20%0A%0AMerci." target="_blank" rel="noopener">WhatsApp</a>
+</div>
+<script>
+(function(){
+  var h = document.querySelector('header'), b = document.querySelector('.menu-btn')
+  if (!h || !b) return
+  function fermer(){ h.classList.remove('menu-ouvert'); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Ouvrir le menu') }
+  b.addEventListener('click', function(){
+    var ouvert = h.classList.toggle('menu-ouvert')
+    b.setAttribute('aria-expanded', ouvert ? 'true' : 'false')
+    b.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu')
+  })
+  document.querySelectorAll('#menu a').forEach(function(a){ a.addEventListener('click', fermer) })
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') fermer() })
+})()
+</script><script>
+(function () {
+  'use strict'
+  var doc = document.documentElement
+
+  // ══════════════════════════════════════════════════════════════
+  // 1. LA LOUPE — une FONCTION, pas une animation.
+  // ──────────────────────────────────────────────────────────────
+  // Elle s'installe TOUJOURS, y compris pour qui demande moins de
+  // mouvement : cette personne veut moins d'animation, pas moins de
+  // site. (Elle a d'abord ete posee derriere ce garde — et elle
+  // disparaissait pour ceux-la.)
+  //
+  // POURQUOI ELLE EXISTE : une capture montre un ecran d'application
+  // entier. Affichee dans une colonne de 860 px, tout ce qu'elle
+  // contient est deux fois trop petit pour etre lu — quelle que soit
+  // la definition du fichier. Elargir la colonne casserait la mise en
+  // page ; on laisse donc ouvrir l'image, en pleine definition.
+  //
+  // Elle ne coute rien au chargement : le voile n'existe qu'au clic.
+  var voile = null, origine = null
+  // Le blocage du defilement est une CLASSE sur <html>, jamais un style
+  // pose a la main : fermer() la retire toujours, et tout evenement qui
+  // quitte la page ou change d'ancre appelle fermer() (filet ci-dessous).
+  function fermer () {
+    if (voile) { voile.remove(); voile = null }
+    doc.classList.remove('loupe-ouverte')
+    document.body.style.overflow = ''
+    if (origine && origine.focus) { try { origine.focus({ preventScroll: true }) } catch (e) {} }
+    origine = null
+  }
+  function ouvrir (img) {
+    fermer()
+    origine = document.activeElement
+    voile = document.createElement('div')
+    voile.className = 'loupe'
+    voile.setAttribute('role', 'dialog')
+    voile.setAttribute('aria-modal', 'true')
+    voile.setAttribute('aria-label', 'Capture agrandie')
+    var grand = new Image()
+    // La DERNIERE entree du srcset est la plus grande : on la sert
+    // explicitement, quelle que soit celle qui etait affichee.
+    var candidats = (img.getAttribute('srcset') || '').split(',')
+      .map(function (c) { return c.trim().split(' ')[0] })
+      .filter(Boolean)
+    grand.src = candidats.length ? candidats[candidats.length - 1]
+      : (img.currentSrc || img.src)
+    grand.alt = img.alt || ''
+    var croix = document.createElement('button')
+    croix.type = 'button'
+    croix.className = 'loupe-fermer'
+    croix.setAttribute('aria-label', 'Fermer')
+    croix.textContent = '✕'
+    voile.appendChild(grand); voile.appendChild(croix)
+    document.body.appendChild(voile)
+    doc.classList.add('loupe-ouverte')
+    // preventScroll : sans lui, le focus faisait sauter la page.
+    croix.focus({ preventScroll: true })
+  }
+  document.addEventListener('click', function (ev) {
+    if (voile) {
+      // Un lien (navigation) clique pendant que la loupe est ouverte :
+      // on ferme ET on laisse le lien agir. Avant, le clic etait avale.
+      if (ev.target.closest && ev.target.closest('a[href]')) { fermer(); return }
+      if (ev.target === voile || ev.target.closest('.loupe-fermer')) fermer()
+      return
+    }
+    var img = ev.target.closest('figure.ecran img, .preuve-image img, .vedette figure img')
+    if (img) { ev.preventDefault(); ouvrir(img) }
+  })
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') fermer()
+  })
+  // Filets : jamais de blocage coince.
+  window.addEventListener('pagehide', fermer)
+  window.addEventListener('pageshow', fermer)
+  window.addEventListener('hashchange', fermer)
+  window.addEventListener('popstate', fermer)
+  // Le curseur ne promet le clic que si le script tourne.
+  doc.className += ' loupe-active'
+
+  // ══════════════════════════════════════════════════════════════
+  // 2. L'ARRIVEE AU DEFILEMENT — ca, c'est du mouvement.
+  // ──────────────────────────────────────────────────────────────
+  // FACULTATIF, DANS CE SENS-LA : sans ce bloc, la page reste
+  // ENTIEREMENT visible. L'etat masque n'existe que sous la classe
+  // .mouvement, posee ici meme. Un visiteur qui bloque le
+  // JavaScript, un robot d'indexation, l'apercu WhatsApp voient la
+  // page complete. On n'echange jamais du contenu contre un effet.
+  function tout_montrer () {
+    doc.className = doc.className.replace(/mouvement/, '')
+  }
+  try {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (!('IntersectionObserver' in window)) return
+
+    // NI les titres de la une (deja animes en CSS), NI l'en-tete : il
+    // est collant, et un decalage sur un de ses parents casserait le
+    // collage.
+    var blocs = [].slice.call(document.querySelectorAll(
+      'article.art, .vedette figure, .socle-grille > *, .trois > *,' +
+      ' figure.ecran, .preuve-texte, .preuve figure, .preuve-image,' +
+      ' section > .cadre > h2, #demonstration .cadre > p, #demonstration .actions'))
+    if (!blocs.length) return
+
+    doc.className += ' mouvement'
+    blocs.forEach(function (el) { el.classList.add('entre') })
+    // Un filet : si quoi que ce soit echoue, tout redevient visible.
+    // Un site commercial invisible est pire que sans effet.
+    setTimeout(tout_montrer, 2500)
+
+    // Cascade : 60 ms entre blocs arrivant ENSEMBLE, plafonnee a 8.
+    // Sans plafond, une grille de neuf cartes trainerait plus
+    // longtemps que la derniere ne met a etre lue.
+    var oeil = new IntersectionObserver(function (entrees) {
+      var rang = 0
+      entrees.forEach(function (e) {
+        if (!e.isIntersecting) return
+        var el = e.target
+        oeil.unobserve(el)
+        var retard = Math.min(rang, 8) * 60
+        rang++
+        setTimeout(function () { el.classList.add('vu') }, retard)
+      })
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 })
+
+    blocs.forEach(function (el) { oeil.observe(el) })
+  } catch (e) { tout_montrer() }
+})()
+</script>
 </body>
 </html>

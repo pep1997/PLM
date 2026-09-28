@@ -15,7 +15,13 @@ html{scroll-behavior:smooth}
 body{background:var(--creme);color:var(--encre);
   font:16px/1.62 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
   -webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
+/* ⚠️ `height:auto` EST OBLIGATOIRE depuis que les captures portent des
+   attributs width/height (2026-09-21, pour réserver leur place et
+   réparer les ancres). Sans lui, la largeur vient du CSS et la hauteur
+   de l'attribut HTML : toutes les images étaient écrasées. Les règles
+   plus bas qui fixent une hauteur (.art .vue img, .voisin img) restent
+   prioritaires, elles sont plus spécifiques. */
 a{color:inherit;text-decoration:none}
 .serif{font-family:Georgia,"Times New Roman",serif}
 .cadre{max-width:1700px;margin:0 auto;padding:0 68px}
@@ -286,3 +292,397 @@ footer{border-top:2px solid var(--encre);background:var(--creme2)}
 
 .preuve .provenance{margin-top:14px;font-size:13.5px;color:var(--gris);
   border-left:2px solid rgba(26,20,14,.22);padding-left:12px;line-height:1.6}
+
+/* ════════════════════════════════════════════════════════════════════
+   MOUVEMENT — ajouté le 2026-09-20
+   ────────────────────────────────────────────────────────────────────
+   Le site n'avait aucune animation et aucun script. Il en a désormais
+   un seul, minuscule, et ces règles.
+
+   PROGRESSIF, DANS CE SENS-LÀ. Sans JavaScript, la page reste
+   ENTIÈREMENT VISIBLE : l'état de départ n'existe que sous `.mouvement`,
+   classe que le script pose sur <html> avant le premier affichage. Un
+   visiteur qui bloque le JS, un robot d'indexation, l'aperçu WhatsApp
+   voient la page complète. On n'échange pas du contenu contre un effet.
+
+   VERTICAL SEULEMENT. Un glissement latéral sur les écrans alternés
+   (.ecran / .ecran.inverse) serait plus joli, mais `.inverse` déborderait
+   à droite et ferait apparaître une barre horizontale — ce que _verif/
+   traque précisément.
+
+   PAS DE `scale`. Georgia rendu pendant un changement d'échelle devient
+   flou : sur un site dont les titres SONT le dessin, c'est perdant.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* La courbe : rapide puis posée. Jamais `linear`, qui fait mécanique. */
+/* ⚠️ `translate`, PAS `transform`. Les cartes du catalogue ont déjà un
+   `transform` au survol : une révélation écrite en `transform` l'aurait
+   écrasé, et le soulèvement au survol aurait disparu sans bruit. Les
+   deux propriétés sont indépendantes et se composent. */
+.mouvement .entre{
+  opacity:0; translate:0 16px;
+  transition:opacity .52s cubic-bezier(.22,.61,.36,1),
+             translate .52s cubic-bezier(.22,.61,.36,1)}
+.mouvement .entre.vu{opacity:1; translate:none}
+
+/* Une fois arrivé, l'élément ne garde AUCUN décalage : il ne devient
+   donc le bloc conteneur d'aucun `position:fixed` ou `sticky`. */
+
+/* ── LA UNE ────────────────────────────────────────────────────────
+   En CSS pur, sans le script : une animation se termine toujours, donc
+   le titre finit visible même si le JavaScript ne s'exécute jamais.
+   Trois temps — le titre, la phrase, les boutons. Pas quatre. */
+@keyframes plmMonte{from{opacity:0;transform:translateY(18px)}
+                    to{opacity:1;transform:none}}
+.une h1, .une .intro, .une .actions,
+.une-produit h1, .une-produit .chapo, .une-produit .actions{
+  animation:plmMonte .62s cubic-bezier(.22,.61,.36,1) backwards}
+.une .intro, .une-produit .chapo{animation-delay:.10s}
+.une .actions, .une-produit .actions{animation-delay:.20s}
+
+/* ── RESPECT DU RÉGLAGE SYSTÈME ────────────────────────────────────
+   Windows et macOS savent dire « moins de mouvement ». On obéit, et on
+   coupe aussi le défilement doux déclaré plus haut : il fait partie du
+   mouvement, et l'oublier laissait la moitié du réglage sans effet. */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .mouvement .entre{opacity:1;translate:none;transition:none}
+  .une h1, .une .intro, .une .actions,
+  .une-produit h1, .une-produit .chapo, .une-produit .actions{animation:none}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   LA TÊTE DE CARTE DU CATALOGUE — refaite le 2026-09-20
+   ────────────────────────────────────────────────────────────────────
+   AVANT : les neuf cartes étaient interchangeables. L'accent du métier
+   tenait dans un filet de 8 px, et la capture encartée faisait 150 px
+   de large — à cette taille, un plan de salle, un planning de chambres
+   et un grand livre sont la même bouillie grise. Il fallait LIRE neuf
+   titres pour trouver le sien.
+
+   APRÈS : la couleur du métier prend toute la tête de la carte, et
+   porte un pictogramme au trait. On reconnaît un lit, une croix, une
+   balance à trois mètres de l'écran.
+
+   DESSIN AU TRAIT, jamais plein : c'est l'écriture du guilloché qui
+   court sous tout le site, celle d'un billet gravé. Un pictogramme
+   plein aurait dit « application mobile » sur un site qui dit
+   « imprimerie ».
+
+   Ces règles viennent APRÈS celles du haut de la feuille, et les
+   remplacent : à spécificité égale, la dernière gagne.
+   ════════════════════════════════════════════════════════════════════ */
+.art{--c:var(--or)}
+.art .vue{
+  position:relative; display:flex; align-items:center; justify-content:center;
+  aspect-ratio:auto; height:138px; overflow:hidden;
+  background:var(--c); border-bottom:2px solid var(--encre)}
+
+/* Le guilloché, en crème par-dessus la couleur du métier. La même
+   trame que le fond du site : la carte appartient à la page.
+   Le voile sombre qui l'accompagne sert à UNE chose — garantir que le
+   pictogramme crème reste lisible même sur l'ocre de l'hôtel, la plus
+   claire des neuf couleurs (3,31:1 sur la crème, mesuré). */
+.art .vue:before{
+  content:""; position:absolute; inset:0; opacity:.5;
+  background-image:
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23F7F2E7' stroke-opacity='.30' stroke-width='.7'%3E%3Ccircle cx='24' cy='24' r='21'/%3E%3Ccircle cx='24' cy='24' r='15'/%3E%3Ccircle cx='24' cy='24' r='9'/%3E%3Ccircle cx='24' cy='24' r='3'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg fill='none' stroke='%23F7F2E7' stroke-opacity='.16' stroke-width='.5'%3E%3Cpath d='M0 0L16 16M16 0L0 16'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(160deg, rgba(26,20,14,.10), rgba(26,20,14,.34));
+  background-size:48px 48px, 16px 16px, auto}
+
+.art .picto{
+  position:relative; width:62px; height:62px;
+  fill:none; stroke:var(--creme); stroke-width:1.7;
+  stroke-linecap:round; stroke-linejoin:round;
+  transition:scale .35s cubic-bezier(.22,.61,.36,1)}
+/* `scale` et non `transform` : la carte se sert déjà de `transform` au
+   survol, et `translate`/`scale` sont des propriétés indépendantes. */
+.art:hover .picto{scale:1.07}
+
+/* Le numéro d'ordre, gravé dans le coin. Il donne à la grille son
+   allure de planche numérotée, et il aide à dire « le 04 ». */
+.art .rang{
+  position:absolute; right:15px; bottom:4px;
+  font-size:38px; line-height:1; letter-spacing:-.02em;
+  color:rgba(247,242,231,.34)}
+
+/* Le filet vertical d'avant n'a plus de raison d'être : la couleur
+   occupe toute la tête. On le neutralise ici plutôt que d'aller le
+   chercher en deux endroits plus haut. */
+.art .bande{display:none}
+
+@media (max-width:900px){
+  .art .vue{height:112px}
+  .art .picto{width:52px;height:52px}
+  .art .rang{font-size:30px}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   LA PROMOTION — ajoutée le 2026-09-20
+   ────────────────────────────────────────────────────────────────────
+   Tout se commande depuis `PROMO` dans v2/contenu.js. `actif: false`
+   éteint l'étiquette, le prix barré et le bandeau d'un seul coup.
+
+   LE PRIX BARRÉ N'EST PAS UN PRIX. Il est plus petit, gris, et sa barre
+   est franche : l'œil doit attraper le NOUVEAU montant en premier. Un
+   ancien prix aussi gros que le nouveau fait hésiter au lieu de vendre.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* L'ancien montant. `text-decoration` explicite : certains navigateurs
+   retirent le trait par défaut de <s> quand on change la couleur. */
+.prix-ancien{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:17px; color:var(--gris); margin-right:8px;
+  text-decoration:line-through; text-decoration-thickness:1.5px;
+  text-decoration-color:rgba(26,20,14,.55)}
+
+/* ⚠️ SUR FOND SOMBRE, LE GRIS DISPARAÎT. La une des pages logiciel est
+   noire : l'ancien montant en var(--gris) #6B6053 y devenait illisible,
+   alors qu'il allait très bien sur la crème du catalogue. Même élément,
+   deux fonds — il faut les deux couleurs. */
+.une-produit .prix-ancien, .guilloche-sombre .prix-ancien{
+  color:rgba(247,242,231,.58);
+  text-decoration-color:rgba(247,242,231,.65)}
+
+/* La remise, à côté du nouveau prix. */
+.prix-remise{
+  display:inline-block; margin-left:8px; vertical-align:2px;
+  padding:3px 8px; border:1.5px solid currentColor; border-radius:2px;
+  font-size:11px; font-weight:900; letter-spacing:.08em;
+  color:var(--c, var(--terre))}
+
+/* L'étiquette sur la tête de carte : coin haut gauche, crème sur la
+   couleur du métier, pour qu'on la voie avant même de lire le titre. */
+.art .etiquette{
+  position:absolute; left:0; top:14px; z-index:3;
+  padding:5px 12px 5px 14px;
+  background:var(--creme); color:var(--encre);
+  border:2px solid var(--encre); border-left:0;
+  font-size:12px; font-weight:900; letter-spacing:.07em; white-space:nowrap}
+
+/* Le bandeau d'annonce, sous le chapeau du catalogue. */
+.annonce-promo{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px;
+  margin-top:22px; padding:14px 20px;
+  border:2px solid var(--encre); border-left:8px solid var(--terre);
+  background:var(--creme2)}
+.annonce-promo b{
+  font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--terre)}
+.annonce-promo span{font-size:15px; color:var(--encre)}
+
+/* Dans le tableau des tarifs, l'ancien prix passe sur sa propre ligne :
+   côte à côte, les deux montants débordaient de la colonne sur
+   téléphone et se lisaient comme une fourchette de prix. */
+.montant .prix-ancien{display:block; margin:0 0 2px; font-size:14px}
+
+@media (max-width:900px){
+  .art .etiquette{top:10px; font-size:11px; padding:4px 10px}
+  .annonce-promo{padding:12px 14px}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   ANCRES ET SECONDE PREUVE — 2026-09-20
+   ────────────────────────────────────────────────────────────────────
+   SIGNALÉ : « Démonstration ramène sur la facture normalisée DGI ».
+   L'ancre était pourtant juste. Deux causes se cumulaient :
+
+   1. l'en-tête est COLLANT sur 92 px. Sans marge de défilement, le
+      titre visé se range DERRIÈRE la barre et l'œil ne voit que la fin
+      de la section précédente — la facture DGI, justement ;
+   2. les captures étaient en `loading="lazy"` SANS dimensions : elles
+      n'occupaient aucune place tant qu'elles n'étaient pas chargées, se
+      chargeaient après le saut et poussaient la page vers le bas.
+      Corrigé dans la fabrique, qui lit maintenant assets/dimensions.js.
+   ════════════════════════════════════════════════════════════════════ */
+:target, section[id], div[id]{scroll-margin-top:108px}
+@media (max-width:900px){ :target, section[id], div[id]{scroll-margin-top:84px} }
+
+/* Deux preuves à la suite ne doivent pas se ressembler : la seconde
+   inverse texte et image, et change de fond. Sinon la page bégaie. */
+.preuve-inverse{background:var(--creme)}
+.preuve-inverse .preuve-texte{order:2}
+.preuve-inverse .preuve-image{order:1}
+@media (max-width:900px){
+  .preuve-inverse .preuve-texte{order:1}
+  .preuve-inverse .preuve-image{order:2}
+}
+
+
+/* Un document servi en UNE seule taille (voir captureSimple dans la
+   fabrique) : on ne l'étire pas à la largeur du cadre. `width:100%`
+   l'aurait agrandi de 444 à ~700 px — du flou promettant du net. Il
+   s'affiche à sa taille réelle, centré sur la feuille. */
+.preuve-image img.document{
+  width:auto; max-width:100%; max-height:560px; margin:0 auto; padding:18px}
+
+
+/* ════════════════════════════════════════════════════════════════════
+   LE STATUT D'UN LOGICIEL — 2026-09-21
+   ────────────────────────────────────────────────────────────────────
+   Seul ce qui n'est PAS encore livrable porte une pastille. « Disponible »
+   est l'état normal : une pastille verte sur les neuf cartes ne
+   distinguerait plus rien, elle ne ferait que du bruit.
+   ════════════════════════════════════════════════════════════════════ */
+.statut{
+  display:inline-block; margin-left:10px; vertical-align:2px;
+  padding:3px 9px; border:1.5px solid var(--sc, var(--gris));
+  border-radius:2px; background:transparent; color:var(--sc, var(--gris));
+  font-family:"Segoe UI Variable Text","Segoe UI",system-ui,sans-serif;
+  font-size:10.5px; font-weight:900; letter-spacing:.1em;
+  text-transform:uppercase; white-space:nowrap}
+.statut-grand{
+  margin-left:16px; vertical-align:middle;
+  padding:5px 13px; font-size:12px; border-width:2px}
+@media (max-width:900px){
+  .statut-grand{display:block; margin:14px 0 0; width:max-content}
+}
+
+
+/* ════════════════════════════════════════════════════════════════════
+   LA BOUCLE VIDÉO — 2026-09-21
+   ────────────────────────────────────────────────────────────────────
+   Même traitement que les captures : cadre noir, ombre portée dure.
+   La vidéo appartient à la page, elle n'est pas posée dessus.
+   ════════════════════════════════════════════════════════════════════ */
+.film{background:var(--creme2);border-top:2px solid var(--encre);
+  border-bottom:2px solid var(--encre)}
+.film .cadre{padding-top:52px;padding-bottom:52px}
+.film h2{font-size:34px;letter-spacing:-.022em;margin:0 0 22px;max-width:22ch}
+.film figure{border:2px solid var(--encre);background:#fff;
+  box-shadow:18px 18px 0 rgba(26,20,14,.10)}
+.film video{display:block;width:100%;height:auto;background:#fff}
+.film figcaption{border-top:2px solid var(--encre);padding:11px 16px;
+  font-size:13px;color:var(--gris)}
+@media (max-width:900px){
+  .film .cadre{padding-top:34px;padding-bottom:34px}
+  .film h2{font-size:26px}
+  .film figure{box-shadow:10px 10px 0 rgba(26,20,14,.10)}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   LA LOUPE — 2026-09-24
+   Ces regles MANQUAIENT : la surcouche etait un <div> sans style, pose
+   en bas de page (position:static), pendant que le script bloquait le
+   defilement. Elle est maintenant fixe, plein ecran, au-dessus de tout.
+   ════════════════════════════════════════════════════════════════════ */
+html.loupe-ouverte,html.loupe-ouverte body{overflow:hidden}
+.loupe{position:fixed;inset:0;z-index:2147483000;display:flex;
+  align-items:center;justify-content:center;padding:56px 16px 16px;
+  box-sizing:border-box;background:rgba(20,15,10,.92);cursor:zoom-out;
+  overscroll-behavior:contain}
+.loupe img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;
+  object-fit:contain;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.5);cursor:default}
+.loupe-fermer{position:absolute;top:10px;right:12px;width:44px;height:44px;
+  border:2px solid #fff;border-radius:50%;background:#1a140e;color:#fff;
+  font:700 20px/1 system-ui,sans-serif;cursor:pointer;z-index:1}
+.loupe-fermer:focus-visible{outline:3px solid #ffd24a;outline-offset:2px}
+
+/* ════════════════════════════════════════════════════════════════════
+   INTERFACE — ORDINATEUR ET TÉLÉPHONE (2026-09-27)
+   Mesuré à 390 px : menu coupé au bord gauche et passé sous le bouton,
+   page de 11 800 px (neuf cartes empilées), capture d'accueil à moitié
+   vide, appel à l'action perdu dès qu'on défile. Placé EN DERNIER : en
+   CSS, à spécificité égale, c'est la dernière règle qui gagne.
+   ════════════════════════════════════════════════════════════════════ */
+/* Accessibilité : un focus visible partout, et l'ancre sous l'en-tête. */
+a:focus-visible,button:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+[id]{scroll-margin-top:110px}
+.menu-btn{display:none}
+
+/* Le bandeau du programme testeurs */
+.testeurs{background:var(--nuit);color:var(--creme);border-bottom:2px solid var(--encre);padding:64px 0;
+  background-image:radial-gradient(900px 420px at 85% 0%,rgba(200,150,62,.20),transparent 70%)}
+.testeurs-grille{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+.testeurs h2{font-size:clamp(30px,3.2vw,46px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px;color:var(--creme)}
+.testeurs h2 em{font-style:italic;color:var(--or)}
+.testeurs p{font-size:17.5px;color:rgba(247,242,231,.78);max-width:60ch}
+.testeurs p b{color:var(--creme)}
+.t-chiffres{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(240,208,138,.28);margin-bottom:22px}
+.t-chiffres div{padding:20px 18px;border-left:1px solid rgba(240,208,138,.28)}
+.t-chiffres div:first-child{border-left:0}
+.t-chiffres b{display:block;font-size:34px;color:var(--or-clair);line-height:1;letter-spacing:-.02em}
+.t-chiffres span{display:block;margin-top:8px;font-size:13.5px;color:rgba(247,242,231,.75);line-height:1.35}
+.btn.large{display:flex;justify-content:center;align-items:center;gap:12px;width:100%;text-align:center;padding:18px 20px}
+
+/* La capture d'accueil : on montre la partie utile de l'écran, pas son vide. */
+.vedette figure > img{display:block;width:100%;height:auto;aspect-ratio:16/8.6;object-fit:cover;object-position:top center}
+
+/* La barre d'action du téléphone (masquée sur ordinateur) */
+.barre-mobile{display:none}
+
+@media (max-width:860px){
+  /* En-tête compact : logo, bouton d'appel, bouton de menu */
+  html.js .barre{flex-wrap:nowrap;height:68px;padding:0;gap:12px}
+  html.js .logo svg{width:38px;height:38px}
+  html.js .logo small{font-size:9px}
+  html.js .menu-btn{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+    width:46px;height:46px;margin-left:auto;background:transparent;border:2px solid var(--encre);cursor:pointer;padding:0 11px}
+  html.js .menu-btn span{display:block;height:2px;background:var(--encre);transition:transform .2s,opacity .2s}
+  html.js header.menu-ouvert .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  html.js header.menu-ouvert .menu-btn span:nth-child(2){opacity:0}
+  html.js header.menu-ouvert .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  html.js .barre .cta{display:none}
+  html.js nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;width:auto;
+    background:var(--creme);border-bottom:2px solid var(--encre);box-shadow:0 18px 40px rgba(26,20,14,.18);
+    font-size:15px;letter-spacing:.08em}
+  html.js nav a{padding:17px 24px;border-top:1px solid rgba(26,20,14,.12)}
+  html.js header.menu-ouvert nav{display:flex}
+  header{position:sticky;top:0;z-index:50}
+
+  /* La barre fixe en bas : démonstration + WhatsApp, toujours à portée de pouce */
+  .barre-mobile{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--encre);border-top:2px solid var(--or);padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+  .barre-mobile a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;font-weight:800;
+    font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+  .bm-demo{background:var(--or);color:#1A1205;margin-right:5px}
+  .bm-wa{background:#1F7A4C;color:#fff;margin-left:5px}
+  .bm-wa:before{content:"";width:18px;height:18px;background:#fff;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z'/%3E%3C/svg%3E") center/contain no-repeat}
+  body{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+
+  /* Testeurs : une colonne */
+  .testeurs{padding:48px 0}
+  .testeurs-grille{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:760px){
+  .cadre{padding:0 20px}
+  h1{font-size:clamp(34px,9.6vw,46px) !important;line-height:1.06}
+  .intro{font-size:16.5px;margin-bottom:34px}
+  .actions{gap:10px}
+  .actions .btn{flex:1 1 100%;text-align:center}
+
+  /* Les neuf cartes deviennent un carrousel qu'on fait glisser du pouce :
+     la page raccourcit de moitié et chaque carte garde sa taille lisible. */
+  .journal{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:86%;gap:16px;
+    overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 22px;scrollbar-width:none;
+    -webkit-overflow-scrolling:touch}
+  .journal::-webkit-scrollbar{display:none}
+  .journal .art{scroll-snap-align:start;box-shadow:6px 6px 0 rgba(26,20,14,.08)}
+  .journal .art:hover{transform:none}
+  .art .vue{aspect-ratio:16/7}
+  .art .txt{padding:18px 18px 20px;gap:8px}
+  .art h3{font-size:24px}
+  .art li{font-size:13.5px}
+  #catalogue .intro:after{content:"Faites glisser pour voir les neuf →";display:block;margin-top:14px;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--or)}
+
+  .vedette .cadre{padding-top:28px;padding-bottom:30px}
+  .vedette figure > img{aspect-ratio:4/3;object-position:top left}
+  .vedette figcaption{flex-direction:column;align-items:flex-start;gap:6px;padding:14px 16px}
+  .t-chiffres b{font-size:26px}
+  .t-chiffres div{padding:14px 12px}
+  .t-chiffres span{font-size:12px}
+  .btn.large{font-size:12px;letter-spacing:.06em}
+}
+@media (prefers-reduced-motion:reduce){ html.js .menu-btn span{transition:none} }
+
+/* ── Changement d'ordinateur et ordinateur exigé (2026-09-27) ───────── */
+.grille-prix .precision{display:block;font-size:12.5px;font-weight:400;color:var(--gris);margin-top:2px;letter-spacing:0}
+.exigence{margin-top:22px;padding:16px 20px;border-left:4px solid var(--or);background:var(--creme2);
+  font-size:15.5px;line-height:1.6;color:var(--encre);max-width:80ch}
+.exigence b{display:block;margin-bottom:4px}
+.testeurs .t-exigence{margin-top:10px;font-size:14.5px;opacity:.9}
+@media (max-width:760px){.exigence{padding:14px 16px;font-size:14.5px}}

@@ -27,16 +27,17 @@
 <meta name="twitter:description" content="Le serveur ouvre la table, la cuisine reçoit le bon, la caisse encaisse : trois écrans, une seule commande, sans réseau.">
 <meta name="twitter:image" content="https://pep1997.github.io/PLM/assets/og.jpg">
 <link rel="stylesheet" href="assets/site-v2.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="guilloche">
 <header><div class="cadre barre">
     <a class="logo" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="44" height="44" role="img" aria-label="PLM"><defs><radialGradient id="p2c-fond" cx="50%" cy="32%" r="78%"><stop offset="0" stop-color="#2E8C5F"/><stop offset=".62" stop-color="#14522F"/><stop offset="1" stop-color="#0A3320"/></radialGradient><linearGradient id="p2c-or" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6DFAA"/><stop offset=".45" stop-color="#D9AB57"/><stop offset="1" stop-color="#A9781F"/></linearGradient><linearGradient id="p2c-or2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DFAA"/><stop offset="1" stop-color="#C8963E"/></linearGradient></defs><circle cx="60" cy="60" r="56" fill="url(#p2c-fond)"/><g fill="none" stroke="url(#p2c-or)" stroke-width="0.9" opacity="0.9"><circle cx="60" cy="60" r="52.5"/><circle cx="60" cy="60" r="46.5"/></g><circle cx="60" cy="60" r="43" fill="none" stroke="url(#p2c-or)" stroke-width="2.2"/><text x="60" y="68" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="30" font-weight="700" letter-spacing=".6" fill="url(#p2c-or2)">PLM</text><rect x="42" y="77" width="36" height="3.2" rx="1.6" fill="url(#p2c-or2)"/></svg>
       <span><b>PLM</b><small>LOGICIELS DE GESTION</small></span></a>
-    <nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <nav id="menu">
       <a href="index.html#catalogue" class="actif">Les neuf</a>
       <a href="index.html#socle">Le socle</a>
       <a href="tarifs.html">Tarifs</a>
-      <a href="index.html#demonstration">Démonstration</a>
       <a href="contact.html">Nous joindre</a>
     </nav>
     <a class="cta" href="contact.html">Demander une démonstration</a>
@@ -48,8 +49,9 @@
   <h1 class="serif">Pepalla Restaurant</h1>
   <p class="accroche">La salle, la cuisine et la caisse parlent enfin la même langue.</p>
   <p class="intro">Le serveur ouvre la table, la cuisine reçoit le bon, la caisse encaisse : trois écrans, une seule commande, sans réseau.</p>
-  <p class="prix-produit"><b>600 000 F</b> <span>achat unique, sans abonnement</span>
+  <p class="prix-produit"><s class="prix-ancien">600 000 F</s> <b>510 000 F</b> <span class="prix-remise">−15 %</span> <span>achat unique, sans abonnement</span>
     <span class="sep">·</span> <span>30 000 F par poste supplémentaire</span></p>
+  <p class="annonce-promo"><b>Offre de lancement</b><span>Remise de 15 % sur les neuf logiciels, jusqu’au 31 décembre 2026.</span></p>
   <div class="actions"><a class="btn plein" href="contact.html">Demander une démonstration</a>
     <a class="btn vert" href="https://wa.me/2250715297268?text=Bonjour%2C%0A%0AJe%20vous%20%C3%A9cris%20depuis%20votre%20site.%20Je%20souhaite%20une%20d%C3%A9monstration%20de%20votre%20logiciel%20Pepalla%20Restaurant.%0A%0AMon%20activit%C3%A9%20%3A%20%0AMa%20ville%20%3A%20%0ANombre%20de%20postes%20%3A%20%0A%0AMerci."
       target="_blank" rel="noopener">Écrire sur WhatsApp</a>
@@ -69,65 +71,93 @@
     aucun dessin, aucune retouche.</p>
   <figure class="ecran">
     <div class="image"><img class="" loading="lazy" decoding="async"
+    width="4500" height="2820"
     src="assets/img/restaurant-04-plan-de-salle.webp"
-    srcset="assets/vign/restaurant-04-plan-de-salle.webp 640w, assets/img/restaurant-04-plan-de-salle.webp 1600w, assets/img2x/restaurant-04-plan-de-salle.webp 3200w"
+    srcset="assets/vign/restaurant-04-plan-de-salle.webp 640w, assets/img/restaurant-04-plan-de-salle.webp 1600w, assets/img2x/restaurant-04-plan-de-salle.webp 3200w, assets/img4x/restaurant-04-plan-de-salle.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt=""></div>
     <figcaption><span class="pastille" style="background:#C2410C">01</span>
       <b class="serif">Le plan de salle</b><span>Chaque table dit son état, son serveur, son montant et son attente.</span></figcaption>
   </figure><figure class="ecran inverse">
     <div class="image"><img class="" loading="lazy" decoding="async"
+    width="3840" height="2400"
     src="assets/img/restaurant-14-ecran-cuisine.webp"
-    srcset="assets/vign/restaurant-14-ecran-cuisine.webp 640w, assets/img/restaurant-14-ecran-cuisine.webp 1600w, assets/img2x/restaurant-14-ecran-cuisine.webp 3200w"
+    srcset="assets/vign/restaurant-14-ecran-cuisine.webp 640w, assets/img/restaurant-14-ecran-cuisine.webp 1600w, assets/img2x/restaurant-14-ecran-cuisine.webp 3200w, assets/img4x/restaurant-14-ecran-cuisine.webp 3840w"
     sizes="(max-width: 900px) 100vw, 1200px" alt=""></div>
     <figcaption><span class="pastille" style="background:#C2410C">02</span>
       <b class="serif">L’écran de la cuisine</b><span>Les bons arrivent ici. Un clic : « en cuisson », puis « prêt au passe ».</span></figcaption>
   </figure><figure class="ecran">
     <div class="image"><img class="" loading="lazy" decoding="async"
+    width="4500" height="4062"
     src="assets/img/restaurant-03-caisse.webp"
-    srcset="assets/vign/restaurant-03-caisse.webp 640w, assets/img/restaurant-03-caisse.webp 1600w, assets/img2x/restaurant-03-caisse.webp 3200w"
+    srcset="assets/vign/restaurant-03-caisse.webp 640w, assets/img/restaurant-03-caisse.webp 1600w, assets/img2x/restaurant-03-caisse.webp 3200w, assets/img4x/restaurant-03-caisse.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt=""></div>
     <figcaption><span class="pastille" style="background:#C2410C">03</span>
       <b class="serif">La caisse</b><span>Encaissement en trois gestes, remise encadrée, ticket normalisé DGI.</span></figcaption>
   </figure><figure class="ecran inverse">
     <div class="image"><img class="" loading="lazy" decoding="async"
+    width="4500" height="3999"
     src="assets/img/restaurant-06-ardoises.webp"
-    srcset="assets/vign/restaurant-06-ardoises.webp 640w, assets/img/restaurant-06-ardoises.webp 1600w, assets/img2x/restaurant-06-ardoises.webp 3200w"
+    srcset="assets/vign/restaurant-06-ardoises.webp 640w, assets/img/restaurant-06-ardoises.webp 1600w, assets/img2x/restaurant-06-ardoises.webp 3200w, assets/img4x/restaurant-06-ardoises.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt=""></div>
     <figcaption><span class="pastille" style="background:#C2410C">04</span>
       <b class="serif">Les ardoises</b><span>Ce que chaque table doit, et l’argent que chaque serveur doit remettre.</span></figcaption>
   </figure><figure class="ecran">
     <div class="image"><img class="" loading="lazy" decoding="async"
+    width="4500" height="4500"
     src="assets/img/restaurant-09-bilan.webp"
-    srcset="assets/vign/restaurant-09-bilan.webp 640w, assets/img/restaurant-09-bilan.webp 1600w, assets/img2x/restaurant-09-bilan.webp 3200w"
+    srcset="assets/vign/restaurant-09-bilan.webp 640w, assets/img/restaurant-09-bilan.webp 1600w, assets/img2x/restaurant-09-bilan.webp 3200w, assets/img4x/restaurant-09-bilan.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt=""></div>
     <figcaption><span class="pastille" style="background:#C2410C">05</span>
       <b class="serif">Les finances</b><span>Trésorerie, comptabilité SYSCOHADA, bilan : le travail du comptable, prêt.</span></figcaption>
   </figure><figure class="ecran inverse">
     <div class="image"><img class="" loading="lazy" decoding="async"
-    src="assets/img/restaurant-24-fiche-employe.webp"
-    srcset="assets/vign/restaurant-24-fiche-employe.webp 640w, assets/img/restaurant-24-fiche-employe.webp 1600w, assets/img2x/restaurant-24-fiche-employe.webp 3200w"
+    width="4500" height="2379"
+    src="assets/img/restaurant-15-rentabilite-mois.webp"
+    srcset="assets/vign/restaurant-15-rentabilite-mois.webp 640w, assets/img/restaurant-15-rentabilite-mois.webp 1600w, assets/img2x/restaurant-15-rentabilite-mois.webp 3200w, assets/img4x/restaurant-15-rentabilite-mois.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt=""></div>
     <figcaption><span class="pastille" style="background:#C2410C">06</span>
+      <b class="serif">La rentabilité, mois par mois</b><span>Vos ventes mois par mois, comparées à l’an dernier : ce qui reste vraiment après les charges.</span></figcaption>
+  </figure><figure class="ecran">
+    <div class="image"><img class="" loading="lazy" decoding="async"
+    width="4500" height="4500"
+    src="assets/img/restaurant-24-fiche-employe.webp"
+    srcset="assets/vign/restaurant-24-fiche-employe.webp 640w, assets/img/restaurant-24-fiche-employe.webp 1600w, assets/img2x/restaurant-24-fiche-employe.webp 3200w, assets/img4x/restaurant-24-fiche-employe.webp 4500w"
+    sizes="(max-width: 900px) 100vw, 1200px" alt=""></div>
+    <figcaption><span class="pastille" style="background:#C2410C">07</span>
       <b class="serif">L’équipe</b><span>L’équipe : contrat, congés, salaire et pointage — le dossier de chacun, photo comprise, prêt à imprimer.</span></figcaption>
   </figure>
 </div></section>
 
+<section class="film"><div class="cadre">
+  <h2 class="serif">Le plat part en cuisine, la salle voit qu’il est prêt.</h2>
+  <figure>
+    <video width="1600" height="1002"
+      autoplay muted loop playsinline preload="metadata"
+      poster="assets/video/restaurant-affiche.jpg"
+      aria-label="Le plat part en cuisine, la salle voit qu’il est prêt.">
+      <source src="assets/video/restaurant.mp4" type="video/mp4">
+      <source src="assets/video/restaurant.webm" type="video/webm">
+    </video>
+    <figcaption>Table ouverte, plats saisis, envoi en cuisine : le bon arrive sur l’écran de la cuisine, le cuisinier le passe en « prêt », la salle le voit sur le plan et la table est encaissée. Enregistré dans le logiciel, temps d’attente raccourcis.</figcaption>
+  </figure>
+</div></section>
 <section class="preuve"><div class="cadre">
   <div class="preuve-texte">
     <span class="chapo" style="color:#C2410C">Facture normalisée DGI</span>
     <h2 class="serif">Le ticket, tel qu’il sort de la caisse.</h2>
     <p>Numéro de facture suivi et non réutilisable, TVA détaillée, enseigne et caissier : le ticket est produit par la caisse au moment de l’encaissement. Quand la facturation électronique est raccordée, la même vente part à la DGI depuis cet écran — sans ressaisie sur un autre logiciel, et sans carnet à côté.</p>
-
   </div>
   <figure class="preuve-image"><img class="" loading="lazy" decoding="async"
+    width="990" height="1188"
     src="assets/img/restaurant-25-ticket-dgi.webp"
-    srcset="assets/vign/restaurant-25-ticket-dgi.webp 640w, assets/img/restaurant-25-ticket-dgi.webp 1600w, assets/img2x/restaurant-25-ticket-dgi.webp 3200w"
+    srcset="assets/vign/restaurant-25-ticket-dgi.webp 640w, assets/img/restaurant-25-ticket-dgi.webp 1600w, assets/img2x/restaurant-25-ticket-dgi.webp 3200w, assets/img4x/restaurant-25-ticket-dgi.webp 990w"
     sizes="(max-width: 900px) 100vw, 1200px" alt=""></figure>
 </div></section>
 
+
 <section class="technique guilloche-sombre"><div class="cadre">
   <h2 class="serif">La fiche technique.</h2>
-  <dl><div><dt>Installation</dt><dd>Windows · exe portable ou installeur</dd></div><div><dt>Réseau</dt><dd>Aucun besoin — tout est local</dd></div><div><dt>Postes</dt><dd>Jusqu’à 5, reliés en Wi-Fi</dd></div><div><dt>Données</dt><dd>Base chiffrée sur le poste, sauvegardes automatiques</dd></div><div><dt>Comptabilité</dt><dd>SYSCOHADA révisé · export pour votre comptable</dd></div><div><dt>Facture</dt><dd>Normalisée DGI (FNE) branchée sur la caisse</dd></div><div><dt>Langues</dt><dd>Français · anglais</dd></div><div><dt>Prix</dt><dd>Achat unique, sans abonnement</dd></div></dl>
+  <dl><div><dt>Installation</dt><dd>Windows · exe portable ou installeur</dd></div><div><dt>Ordinateur exigé</dt><dd>Windows 10 ou 11 · 8 Go de mémoire vive (RAM) minimum, pour chaque poste</dd></div><div><dt>Réseau</dt><dd>Aucun besoin — tout est local</dd></div><div><dt>Postes</dt><dd>Jusqu’à 5, reliés en Wi-Fi</dd></div><div><dt>Données</dt><dd>Base chiffrée sur le poste (AES-256), rouverte sur un nouvel ordinateur par votre phrase de secours — Pepalla n’en garde aucune copie ; sauvegardes automatiques</dd></div><div><dt>Comptabilité</dt><dd>SYSCOHADA révisé · export pour votre comptable</dd></div><div><dt>Facture</dt><dd>Normalisée DGI (FNE) branchée sur la caisse</dd></div><div><dt>Langues</dt><dd>Français · anglais</dd></div><div><dt>Prix</dt><dd>Achat unique, sans abonnement</dd></div><div><dt>Matériel</dt><dd>S’adapte aux caisses enregistreuses, imprimantes à tickets, tiroirs-caisses et scanners du commerce</dd></div></dl>
   <div class="actions"><a class="btn plein" href="contact.html">Demander une démonstration</a>
     <a class="btn vide" href="tarifs.html">Voir les tarifs</a></div>
 </div></section>
@@ -138,26 +168,30 @@
     <a class="voisin" href="logiciel-maquis.html">
       <span class="bande" style="background:#8E1F3C"></span>
       <img class="" loading="lazy" decoding="async"
+    width="4500" height="2820"
     src="assets/img/maquis-04-plan-de-salle.webp"
-    srcset="assets/vign/maquis-04-plan-de-salle.webp 640w, assets/img/maquis-04-plan-de-salle.webp 1600w, assets/img2x/maquis-04-plan-de-salle.webp 3200w"
+    srcset="assets/vign/maquis-04-plan-de-salle.webp 640w, assets/img/maquis-04-plan-de-salle.webp 1600w, assets/img2x/maquis-04-plan-de-salle.webp 3200w, assets/img4x/maquis-04-plan-de-salle.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt="">
       <span class="nom"><b>Pepalla Maquis</b><span>Maquis, bars et buvettes</span></span></a><a class="voisin" href="logiciel-hotel.html">
-      <span class="bande" style="background:#B9762A"></span>
+      <span class="bande" style="background:#996122"></span>
       <img class="" loading="lazy" decoding="async"
+    width="4500" height="4341"
     src="assets/img/hotel-03-planning-chambres.webp"
-    srcset="assets/vign/hotel-03-planning-chambres.webp 640w, assets/img/hotel-03-planning-chambres.webp 1600w, assets/img2x/hotel-03-planning-chambres.webp 3200w"
+    srcset="assets/vign/hotel-03-planning-chambres.webp 640w, assets/img/hotel-03-planning-chambres.webp 1600w, assets/img2x/hotel-03-planning-chambres.webp 3200w, assets/img4x/hotel-03-planning-chambres.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt="">
       <span class="nom"><b>Pepalla Hôtel</b><span>Hôtels, auberges et résidences</span></span></a><a class="voisin" href="logiciel-depot.html">
       <span class="bande" style="background:#1D4ED8"></span>
       <img class="" loading="lazy" decoding="async"
+    width="4500" height="4086"
     src="assets/img/depot-04-casiers.webp"
-    srcset="assets/vign/depot-04-casiers.webp 640w, assets/img/depot-04-casiers.webp 1600w, assets/img2x/depot-04-casiers.webp 3200w"
+    srcset="assets/vign/depot-04-casiers.webp 640w, assets/img/depot-04-casiers.webp 1600w, assets/img2x/depot-04-casiers.webp 3200w, assets/img4x/depot-04-casiers.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt="">
       <span class="nom"><b>Pepalla Dépôt</b><span>Dépôts et distributeurs de boissons</span></span></a><a class="voisin" href="logiciel-commerce.html">
-      <span class="bande" style="background:#6D28D9"></span>
+      <span class="bande" style="background:#0E7490"></span>
       <img class="" loading="lazy" decoding="async"
+    width="4500" height="3297"
     src="assets/img/commerce-26-choix-metier.webp"
-    srcset="assets/vign/commerce-26-choix-metier.webp 640w, assets/img/commerce-26-choix-metier.webp 1600w, assets/img2x/commerce-26-choix-metier.webp 3200w"
+    srcset="assets/vign/commerce-26-choix-metier.webp 640w, assets/img/commerce-26-choix-metier.webp 1600w, assets/img2x/commerce-26-choix-metier.webp 3200w, assets/img4x/commerce-26-choix-metier.webp 4500w"
     sizes="(max-width: 900px) 100vw, 1200px" alt="">
       <span class="nom"><b>Pepalla Commerce</b><span>Boutiques, quincailleries, commerces</span></span></a>
   </div>
@@ -172,5 +206,152 @@
   </div>
   <span class="copy">Propriété de PLM Groupe ®</span>
 </div></footer>
+<div class="barre-mobile" role="navigation" aria-label="Actions rapides">
+  <a class="bm-demo" href="contact.html">Démonstration</a>
+  <a class="bm-wa" href="https://wa.me/2250715297268?text=Bonjour%2C%0A%0AJe%20vous%20%C3%A9cris%20depuis%20votre%20site.%20Je%20souhaite%20une%20d%C3%A9monstration%20de%20vos%20logiciels%20de%20gestion.%0A%0AMon%20activit%C3%A9%20%3A%20%0AMa%20ville%20%3A%20%0ANombre%20de%20postes%20%3A%20%0A%0AMerci." target="_blank" rel="noopener">WhatsApp</a>
+</div>
+<script>
+(function(){
+  var h = document.querySelector('header'), b = document.querySelector('.menu-btn')
+  if (!h || !b) return
+  function fermer(){ h.classList.remove('menu-ouvert'); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Ouvrir le menu') }
+  b.addEventListener('click', function(){
+    var ouvert = h.classList.toggle('menu-ouvert')
+    b.setAttribute('aria-expanded', ouvert ? 'true' : 'false')
+    b.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu')
+  })
+  document.querySelectorAll('#menu a').forEach(function(a){ a.addEventListener('click', fermer) })
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') fermer() })
+})()
+</script><script>
+(function () {
+  'use strict'
+  var doc = document.documentElement
+
+  // ══════════════════════════════════════════════════════════════
+  // 1. LA LOUPE — une FONCTION, pas une animation.
+  // ──────────────────────────────────────────────────────────────
+  // Elle s'installe TOUJOURS, y compris pour qui demande moins de
+  // mouvement : cette personne veut moins d'animation, pas moins de
+  // site. (Elle a d'abord ete posee derriere ce garde — et elle
+  // disparaissait pour ceux-la.)
+  //
+  // POURQUOI ELLE EXISTE : une capture montre un ecran d'application
+  // entier. Affichee dans une colonne de 860 px, tout ce qu'elle
+  // contient est deux fois trop petit pour etre lu — quelle que soit
+  // la definition du fichier. Elargir la colonne casserait la mise en
+  // page ; on laisse donc ouvrir l'image, en pleine definition.
+  //
+  // Elle ne coute rien au chargement : le voile n'existe qu'au clic.
+  var voile = null, origine = null
+  // Le blocage du defilement est une CLASSE sur <html>, jamais un style
+  // pose a la main : fermer() la retire toujours, et tout evenement qui
+  // quitte la page ou change d'ancre appelle fermer() (filet ci-dessous).
+  function fermer () {
+    if (voile) { voile.remove(); voile = null }
+    doc.classList.remove('loupe-ouverte')
+    document.body.style.overflow = ''
+    if (origine && origine.focus) { try { origine.focus({ preventScroll: true }) } catch (e) {} }
+    origine = null
+  }
+  function ouvrir (img) {
+    fermer()
+    origine = document.activeElement
+    voile = document.createElement('div')
+    voile.className = 'loupe'
+    voile.setAttribute('role', 'dialog')
+    voile.setAttribute('aria-modal', 'true')
+    voile.setAttribute('aria-label', 'Capture agrandie')
+    var grand = new Image()
+    // La DERNIERE entree du srcset est la plus grande : on la sert
+    // explicitement, quelle que soit celle qui etait affichee.
+    var candidats = (img.getAttribute('srcset') || '').split(',')
+      .map(function (c) { return c.trim().split(' ')[0] })
+      .filter(Boolean)
+    grand.src = candidats.length ? candidats[candidats.length - 1]
+      : (img.currentSrc || img.src)
+    grand.alt = img.alt || ''
+    var croix = document.createElement('button')
+    croix.type = 'button'
+    croix.className = 'loupe-fermer'
+    croix.setAttribute('aria-label', 'Fermer')
+    croix.textContent = '✕'
+    voile.appendChild(grand); voile.appendChild(croix)
+    document.body.appendChild(voile)
+    doc.classList.add('loupe-ouverte')
+    // preventScroll : sans lui, le focus faisait sauter la page.
+    croix.focus({ preventScroll: true })
+  }
+  document.addEventListener('click', function (ev) {
+    if (voile) {
+      // Un lien (navigation) clique pendant que la loupe est ouverte :
+      // on ferme ET on laisse le lien agir. Avant, le clic etait avale.
+      if (ev.target.closest && ev.target.closest('a[href]')) { fermer(); return }
+      if (ev.target === voile || ev.target.closest('.loupe-fermer')) fermer()
+      return
+    }
+    var img = ev.target.closest('figure.ecran img, .preuve-image img, .vedette figure img')
+    if (img) { ev.preventDefault(); ouvrir(img) }
+  })
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') fermer()
+  })
+  // Filets : jamais de blocage coince.
+  window.addEventListener('pagehide', fermer)
+  window.addEventListener('pageshow', fermer)
+  window.addEventListener('hashchange', fermer)
+  window.addEventListener('popstate', fermer)
+  // Le curseur ne promet le clic que si le script tourne.
+  doc.className += ' loupe-active'
+
+  // ══════════════════════════════════════════════════════════════
+  // 2. L'ARRIVEE AU DEFILEMENT — ca, c'est du mouvement.
+  // ──────────────────────────────────────────────────────────────
+  // FACULTATIF, DANS CE SENS-LA : sans ce bloc, la page reste
+  // ENTIEREMENT visible. L'etat masque n'existe que sous la classe
+  // .mouvement, posee ici meme. Un visiteur qui bloque le
+  // JavaScript, un robot d'indexation, l'apercu WhatsApp voient la
+  // page complete. On n'echange jamais du contenu contre un effet.
+  function tout_montrer () {
+    doc.className = doc.className.replace(/mouvement/, '')
+  }
+  try {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (!('IntersectionObserver' in window)) return
+
+    // NI les titres de la une (deja animes en CSS), NI l'en-tete : il
+    // est collant, et un decalage sur un de ses parents casserait le
+    // collage.
+    var blocs = [].slice.call(document.querySelectorAll(
+      'article.art, .vedette figure, .socle-grille > *, .trois > *,' +
+      ' figure.ecran, .preuve-texte, .preuve figure, .preuve-image,' +
+      ' section > .cadre > h2, #demonstration .cadre > p, #demonstration .actions'))
+    if (!blocs.length) return
+
+    doc.className += ' mouvement'
+    blocs.forEach(function (el) { el.classList.add('entre') })
+    // Un filet : si quoi que ce soit echoue, tout redevient visible.
+    // Un site commercial invisible est pire que sans effet.
+    setTimeout(tout_montrer, 2500)
+
+    // Cascade : 60 ms entre blocs arrivant ENSEMBLE, plafonnee a 8.
+    // Sans plafond, une grille de neuf cartes trainerait plus
+    // longtemps que la derniere ne met a etre lue.
+    var oeil = new IntersectionObserver(function (entrees) {
+      var rang = 0
+      entrees.forEach(function (e) {
+        if (!e.isIntersecting) return
+        var el = e.target
+        oeil.unobserve(el)
+        var retard = Math.min(rang, 8) * 60
+        rang++
+        setTimeout(function () { el.classList.add('vu') }, retard)
+      })
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 })
+
+    blocs.forEach(function (el) { oeil.observe(el) })
+  } catch (e) { tout_montrer() }
+})()
+</script>
 </body>
 </html>
