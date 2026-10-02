@@ -1,104 +1,65 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="fr" class="sans-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Conditions d’utilisation — PLM</title>
-<meta name="description" content="Conditions générales d’utilisation des logiciels PLM : licence, données qui restent chez vous, sauvegardes, comptabilité, responsabilité, droit ivoirien. Version 1.0 du 3 septembre 2026.">
-<meta name="theme-color" content="#ffffff">
-<link rel="icon" href="assets/plm-icone.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-PtdI6/36DhPdMEgjNWV5ExIEqFovVcjUHPeOyApfBhs='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Conditions d’utilisation · PLM</title>
+<meta name="description" content="Les conditions d’utilisation des logiciels PLM.">
 <link rel="canonical" href="https://plmgestion.com/conditions.html">
-<meta property="og:site_name" content="PLM — Logiciels de gestion">
-<meta property="og:title" content="Conditions d’utilisation des logiciels PLM">
-<meta property="og:description" content="Le texte exact que le logiciel vous demande d’accepter à la première ouverture. Version 1.0 du 3 septembre 2026.">
-<meta property="og:type" content="article">
+<link rel="alternate" hreflang="fr" href="https://plmgestion.com/conditions.html">
+<link rel="alternate" hreflang="en" href="https://plmgestion.com/en/conditions.html">
+<link rel="alternate" hreflang="x-default" href="https://plmgestion.com/conditions.html">
+<meta name="theme-color" content="#FF8A2E">
+<meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="PLM">
+<meta property="og:title" content="Conditions d’utilisation · PLM">
+<meta property="og:description" content="Les conditions d’utilisation des logiciels PLM.">
 <meta property="og:url" content="https://plmgestion.com/conditions.html">
+<meta property="og:image" content="https://plmgestion.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/plm-embleme-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/plm-embleme-180.png">
+<link rel="preload" href="assets/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css?v=muq8z3th">
+<script>document.documentElement.className='js'</script>
 
-<style>
-/* ══════════════════════════════════════════════════════════════════
-   LE MÊME TEXTE QUE DANS LE LOGICIEL, AU MOT PRÈS.
-
-   Un client doit pouvoir lire ce qu'il va signer AVANT d'acheter, et
-   le retrouver identique une fois installé. Deux textes qui divergent,
-   c'est le premier qui est opposé le jour d'un litige et le second qui
-   a été accepté : personne n'y gagne.
-
-   La version fait foi : `1.0`, la même que `CGU_VERSION` dans
-   `_outils-pepalla/module_cgu.html`. En changer une sans l'autre, c'est
-   promettre en vitrine autre chose que ce que l'application demande.
-   ══════════════════════════════════════════════════════════════════ */
-:root{
-  --blanc:#fff;
-  --ink:#0A0E13;
-  --ink2:#414B57;
-  --ink3:#77828F;
-  --ligne:#E4E8EC;
-  --voile:#F7F9FA;
-  --acc:#0E7A43;
-  --serif:Georgia,"Times New Roman",Times,serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--blanc);color:var(--ink);font-family:var(--sans);
-  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
-.enveloppe{max-width:760px;margin:0 auto;padding:0 22px}
-header{border-bottom:1px solid var(--ligne);padding:20px 0;background:var(--voile)}
-header .enveloppe{display:flex;align-items:center;justify-content:space-between;gap:14px}
-.marque{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
-.marque img{width:34px;height:34px;display:block}
-.marque b{font-family:var(--serif);font-size:19px;letter-spacing:.01em}
-header a.retour{color:var(--acc);text-decoration:none;font-size:14px;font-weight:600}
-header a.retour:hover{text-decoration:underline}
-
-h1{font-family:var(--serif);font-size:34px;line-height:1.2;margin:44px 0 10px;font-weight:400}
-.chapeau{color:var(--ink2);font-size:16.5px;margin:0 0 6px}
-.version{display:inline-block;margin:14px 0 0;padding:6px 12px;border:1px solid var(--ligne);
-  border-radius:999px;font-size:13.5px;color:var(--ink3);background:var(--voile)}
-.avis{margin:26px 0 0;padding:14px 16px;border-left:3px solid var(--acc);
-  background:#F2F8F4;border-radius:0 8px 8px 0;font-size:14.5px;color:var(--ink2)}
-
-article{margin:38px 0 0}
-h2{font-family:var(--serif);font-size:20px;font-weight:400;margin:30px 0 8px;
-  padding-top:22px;border-top:1px solid var(--ligne)}
-h2:first-of-type{border-top:0;padding-top:0}
-p{margin:0 0 12px;color:var(--ink2)}
-p b{color:var(--ink)}
-
-footer{margin-top:56px;border-top:1px solid var(--ligne);background:var(--voile);
-  padding:26px 0 40px;font-size:14px;color:var(--ink3)}
-footer .enveloppe{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
-footer a{color:var(--ink3)}
-@media(max-width:520px){ h1{font-size:27px} body{font-size:15.5px} }
-</style>
 </head>
 <body>
-
-<header>
-  <div class="enveloppe">
-    <a class="marque" href="index.html">
-      <img src="assets/plm-icone.svg" alt="">
-      <b>PLM</b>
-    </a>
-    <a class="retour" href="index.html">← Retour au site</a>
+<div class="fond" aria-hidden="true"><i></i><i></i><i></i></div>
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+<header class="entete">
+  <div class="conteneur">
+    <a class="logo" href="index.html" aria-label="PLM — Logiciels de gestion, accueil"><img src="assets/plm-embleme.svg" alt="" width="40" height="40"><span>PLM<small>Logiciels de gestion</small></span></a>
+    <nav class="nav" aria-label="Menu principal"><ul><li><a href="index.html#applications">Applications</a></li><li><a href="index.html#a-propos">À propos</a></li><li><a href="contact.html">Contact</a></li><li><a class="langue" href="en/conditions.html" hreflang="en" lang="en" aria-label="Read this site in English" title="Read this site in English">EN</a></li><li><a class="btn btn-encre" href="contact.html">Demander une démo</a></li></ul></nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </header>
-
-<main class="enveloppe">
-
-  <h1>Conditions d’utilisation</h1>
+<div class="menu-mobile" id="menu-mobile" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="haut"><a class="logo" href="index.html"><img src="assets/plm-embleme.svg" alt="" width="40" height="40"><span>PLM</span></a>
+    <button class="burger menu-fermer" type="button" aria-label="Fermer le menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <ul><li><a href="index.html#applications">Applications</a></li><li><a href="index.html#a-propos">À propos</a></li><li><a href="contact.html">Contact</a></li><li><a class="langue" href="en/conditions.html" hreflang="en" lang="en" aria-label="Read this site in English" title="Read this site in English">EN</a></li></ul>
+  <div class="actions"><a class="btn btn-encre" href="contact.html">Demander une démo</a>
+    <a class="btn btn-wa" href="https://wa.me/491727713971" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg> WhatsApp +49 172 771 39 71</a></div>
+</div>
+<main id="contenu">
+<div class="section" style="padding-top:40px"><div class="conteneur"><article class="carte page-texte" lang="fr"><h1>Conditions d’utilisation</h1>
   <p class="chapeau">Le texte que le logiciel vous présente à sa première ouverture, et
     qu’il faut accepter pour l’utiliser. Il est reproduit ici mot pour mot, pour que vous
     puissiez le lire avant d’acheter.</p>
-  <div class="version">Version 1.0 — 3 septembre 2026</div>
+  Version 1.0 — 3 septembre 2026
 
-  <div class="avis">
+  
     Ce texte s’applique à l’ensemble des logiciels PLM : clinique, hôtel, restaurant,
     maquis, dépôt de boissons, commerce et gestion de stock. Dans le logiciel, le nom du
     produit que vous avez acheté remplace la mention générale.
-  </div>
+  
 
-  <article>
+  
 
     <h2>1. Objet</h2>
     <p>Les présentes conditions générales d’utilisation régissent l’usage des logiciels
@@ -189,23 +150,17 @@ footer a{color:var(--ink3)}
       votre facture d’achat, et sur la <a href="index.html#contact">page de contact</a> de
       ce site.</p>
 
-  </article>
-
+  </article></div></div>
 </main>
+<footer class="pied"><div class="conteneur"><div class="carte">
+  <div><a class="logo" href="index.html"><img src="assets/plm-embleme.svg" alt="" width="40" height="40" loading="lazy"><span>PLM<small>Logiciels de gestion</small></span></a>
+    <p style="margin-top:12px">Neuf logiciels de gestion pour les commerces et institutions d’Afrique de l’Ouest : installés chez vous, sans internet, sans abonnement, en français et en anglais.</p></div>
+  <nav aria-label="Le site"><ul><li><a href="index.html#applications">Applications</a></li><li><a href="index.html#a-propos">À propos</a></li><li><a href="contact.html">Contact</a></li><li><a href="conditions.html">Conditions d’utilisation</a></li></ul></nav>
+  <div><span class="sourcil">Nous joindre</span><ul><li><a href="https://wa.me/491727713971" target="_blank" rel="noopener">WhatsApp +49 172 771 39 71</a></li><li><a href="tel:+2250715297268">Abidjan · +225 07 15 29 72 68</a></li><li><a href="tel:+2250767148180">Yamoussoukro · +225 07 67 14 81 80</a></li></ul></div>
+  <p class="mentions">© 2026 PLM — Pepalla Fernandez, éditeur. Logiciels pour ordinateur Windows · 8 Go de RAM minimum par poste.<br>Le motif du fond : Nkonsonkonson, le maillon de chaîne adinkra — « nous sommes liés » : l’unité et les liens qui nous rassemblent.</p>
+</div></div></footer>
 
-<footer>
-  <div class="enveloppe">
-    <div>© <span id="annee">2026</span> PLM — Tous droits réservés.</div>
-    <nav>
-      <a href="index.html">Accueil</a> ·
-      <a href="index.html#tarifs">Tarifs</a> ·
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </div>
-</footer>
 
-<script>
-document.getElementById('annee').textContent = new Date().getFullYear();
-</script>
+<script src="assets/site.js?v=muq8z3th" defer></script>
 </body>
 </html>

@@ -1,0 +1,755 @@
+{
+ "restaurant": {
+  "images": {
+   "restaurant/03-caisse": {
+    "largeur": 4500,
+    "hauteur": 4062,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "restaurant/31-statistiques-ventes": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "restaurant/30-budgets-objectifs": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "restaurant/09-bilan": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "restaurant/32-recherche-globale": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "restaurant/33-guide-utilisation": {
+    "largeur": 3840,
+    "hauteur": 2880,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "restaurant/04-plan-de-salle": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "restaurant/14-ecran-cuisine": {
+    "largeur": 3840,
+    "hauteur": 2400,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
+ },
+ "maquis": {
+  "images": {
+   "maquis/04-plan-de-salle": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "maquis/13-ecran-stock": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "maquis/05-ardoises": {
+    "largeur": 4500,
+    "hauteur": 2859,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "maquis/08-inventaire": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "maquis/07-argent": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "maquis/14-rentabilite-mois": {
+    "largeur": 4500,
+    "hauteur": 2379,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "maquis/24-fiche-employe": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
+ },
+ "hotel": {
+  "images": {
+   "hotel/03-planning-chambres": {
+    "largeur": 4500,
+    "hauteur": 4341,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "hotel/02-reception": {
+    "largeur": 4500,
+    "hauteur": 3864,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "hotel/05-fiche-sejour": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "hotel/09-debiteurs": {
+    "largeur": 4500,
+    "hauteur": 3273,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "hotel/16-rentabilite-mois": {
+    "largeur": 4500,
+    "hauteur": 2379,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "hotel/13-caisse": {
+    "largeur": 4500,
+    "hauteur": 4275,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "hotel/24-fiche-employe": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
+ },
+ "depot": {
+  "images": {
+   "depot/04-casiers": {
+    "largeur": 4500,
+    "hauteur": 4086,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "depot/14-livraisons": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "depot/03-caisse": {
+    "largeur": 4500,
+    "hauteur": 3123,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "depot/05-clients": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "depot/28-reservations": {
+    "largeur": 4344,
+    "hauteur": 1239,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "depot/27-reservation": {
+    "largeur": 1170,
+    "hauteur": 1686,
+    "largeurs": [
+     640,
+     1170
+    ]
+   },
+   "depot/29-compte-client": {
+    "largeur": 1320,
+    "hauteur": 2172,
+    "largeurs": [
+     640,
+     1280,
+     1320
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
+ },
+ "commerce": {
+  "images": {
+   "commerce/26-choix-metier": {
+    "largeur": 4500,
+    "hauteur": 3462,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "commerce/16-livraisons-en-cours": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "commerce/10-codes-barres": {
+    "largeur": 4500,
+    "hauteur": 3405,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "commerce/05-inventaire": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "commerce/08-clients": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "commerce/28-reservations": {
+    "largeur": 4344,
+    "hauteur": 1239,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "commerce/27-reservation": {
+    "largeur": 1170,
+    "hauteur": 1686,
+    "largeurs": [
+     640,
+     1170
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
+ },
+ "stock": {
+  "images": {
+   "stock/04-inventaire": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "stock/05-produits": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "stock/06-achats": {
+    "largeur": 4500,
+    "hauteur": 3690,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "stock/28-reservations": {
+    "largeur": 4344,
+    "hauteur": 1239,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "stock/29-compte-client": {
+    "largeur": 1320,
+    "hauteur": 624,
+    "largeurs": [
+     640,
+     1280,
+     1320
+    ]
+   },
+   "stock/10-rentabilite": {
+    "largeur": 4500,
+    "hauteur": 2700,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "stock/14-rentabilite-mois": {
+    "largeur": 4500,
+    "hauteur": 2379,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
+ },
+ "clinique": {
+  "images": {
+   "clinique/14-profil-etablissement": {
+    "largeur": 4500,
+    "hauteur": 2940,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "clinique/04-dossier-patient": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "clinique/07-salle-attente": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "clinique/15-catalogue-actes": {
+    "largeur": 4500,
+    "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "clinique/17-rentabilite-mois": {
+    "largeur": 4500,
+    "hauteur": 2388,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "clinique/08b-hospitalisation-lits": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "clinique/13-ecran-salle-attente": {
+    "largeur": 3840,
+    "hauteur": 2160,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
+ },
+ "ecole": {
+  "images": {
+   "ecole/03-eleves": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "ecole/03b-fiche-eleve": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "ecole/05-scolarite": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "ecole/17-rentabilite-mois": {
+    "largeur": 4500,
+    "hauteur": 2244,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "ecole/06-notes": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "ecole/07-emploi-du-temps": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "ecole/11-personnel": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
+ },
+ "compta": {
+  "images": {
+   "compta/03-saisie": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "compta/06-journaux": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "compta/08-balance": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "compta/14-bilan": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "compta/15-resultat": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
+ }
+}
