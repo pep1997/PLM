@@ -344,6 +344,8 @@
       pauseVideo()
       appI = i
       var a = APPS[i]
+      // La fiche « Qualité et caractéristiques techniques » suit l'onglet.
+      $$('[data-qualite]').forEach(function (f) { f.hidden = f.getAttribute('data-qualite') !== a.id })
       tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === i ? 'true' : 'false'); t.tabIndex = k === i ? 0 : -1 })
       panneau.setAttribute('aria-labelledby', tabs[i].id)
       placerIndicateur(); recentrerOnglet(!opts.premier)
@@ -390,6 +392,15 @@
     }
     window.addEventListener('popstate', function () { depuisAdresse(false) })
     window.addEventListener('hashchange', function () { depuisAdresse(false) })
+    // Montrer une application depuis ailleurs dans la page (« Voir le logiciel »
+    // du guide) : l'onglet s'active ET la vitrine revient sous les yeux.
+    window.PLM_montrerApp = function (id) {
+      var k = APPS.findIndex(function (a) { return a.id === id }); if (k < 0) return false
+      activer(k, { pousser: true })
+      vitrine.scrollIntoView({ block: 'start', behavior: MOUV ? 'smooth' : 'instant' })
+      tabs[k].focus({ preventScroll: true })
+      return true
+    }
     var raf = null
     window.addEventListener('resize', function () {
       cancelAnimationFrame(raf)
@@ -605,4 +616,92 @@
     $('#contact').scrollIntoView({ block: 'start' })
     setTimeout(function () { f.elements.nom.focus({ preventScroll: true }) }, MOUV ? 450 : 0)
   })
+
+  // ══ COMPTEURS ANIMÉS (03/10/2026) ══════════════════════════════════
+  // Ils comptent de 0 à leur valeur à l'entrée dans l'écran, une seule fois,
+  // avec un ralenti doux. Sans animation demandée : la valeur, tout de suite.
+  var compteurs = $$('.compteur-n[data-compte]')
+  if (compteurs.length && MOUV && 'IntersectionObserver' in window) {
+    var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') }
+    compteurs.forEach(function (c) { c.textContent = '0' + (c.getAttribute('data-suffixe') || '') })
+    var vuC = new IntersectionObserver(function (entrees) {
+      entrees.forEach(function (en) {
+        if (!en.isIntersecting) return
+        vuC.unobserve(en.target)
+        var el = en.target, fin = Number(el.getAttribute('data-compte')) || 0, suf = el.getAttribute('data-suffixe') || '', t0 = null
+        // Minuterie plutôt que requestAnimationFrame : celui-ci s'arrête dans un
+        // onglet en arrière-plan, et le compteur resterait à 0.
+        t0 = Date.now()
+        var pas = function () {
+          var k = Math.min(1, (Date.now() - t0) / 1600), doux = 1 - Math.pow(1 - k, 3)
+          el.textContent = fmt(Math.round(fin * doux)) + suf
+          if (k < 1) setTimeout(pas, 16)
+        }
+        pas()
+      })
+    }, { threshold: 0.4 })
+    compteurs.forEach(function (c) { vuC.observe(c) })
+  }
+
+  // ══ COMPARATIF : DEUX LOGICIELS CÔTE À CÔTE SUR TÉLÉPHONE ══════════
+  // Le tableau est le même que sur grand écran ; sur téléphone, seules les
+  // deux colonnes choisies restent visibles (aucune information perdue : on
+  // change de logiciel dans les menus). Un besoin touché propose le bon logiciel.
+  var selects = $$('[data-comparer]')
+  function montrerColonnes () {
+    var ids = selects.map(function (s) { return s.value })
+    $$('.comparatif [data-col]').forEach(function (c) { c.classList.toggle('montre', ids.indexOf(c.getAttribute('data-col')) >= 0) })
+    $$('[data-besoin]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-besoin') === ids[0] ? 'true' : 'false') })
+  }
+  if (selects.length === 2) {
+    selects.forEach(function (s, k) {
+      s.addEventListener('change', function () {
+        var autre = selects[1 - k]
+        if (autre.value === s.value) autre.value = (autre.options[0].value === s.value ? autre.options[1] : autre.options[0]).value
+        montrerColonnes()
+      })
+    })
+    $$('[data-besoin]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        selects[0].value = b.getAttribute('data-besoin')
+        if (selects[1].value === selects[0].value) selects[1].value = (selects[1].options[0].value === selects[0].value ? selects[1].options[1] : selects[1].options[0]).value
+        montrerColonnes()
+      })
+    })
+    montrerColonnes()
+  }
+
+  // ══ « TROUVEZ VOTRE LOGICIEL » EN 3 QUESTIONS ═══════════════════════
+  var tv = $('#trouver')
+  if (tv && D && D.apps) {
+    var choix = { app: null, postes: null }
+    var etape = function (n) { $$('.trouver-etape', tv).forEach(function (e) { var k = +e.getAttribute('data-etape'); e.hidden = k > n }) }
+    var resultat = function () {
+      var a = D.apps.filter(function (x) { return x.id === choix.app })[0]; if (!a) return
+      var r = $('.trouver-resultat', tv)
+      var note = choix.postes === 6 ? T.trouverPostesPlus : choix.postes === 1 ? T.trouverPostesUn : T.trouverPostesOk
+      r.innerHTML = '<span class="sourcil">' + esc(T.trouverPour) + '</span><h4>' + esc(a.nom) + '</h4><p>' + esc(a.accroche || '') + '</p><p class="qualite-note">' + esc(note) + '</p>'
+        + '<div class="actions"><a class="btn btn-encre" href="contact.html?app=' + esc(a.id) + '" data-demo="' + esc(a.id) + '">' + esc(T.trouverEquiper) + '</a>'
+        + '<a class="btn" href="#applications/' + esc(a.id) + '" data-voir="' + esc(a.id) + '">' + esc(T.trouverVoir) + '</a>'
+        + '<button type="button" class="btn" data-recommencer>' + esc(T.trouverRecommencer) + '</button></div>'
+      r.hidden = false
+      var h = $('h4', r); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }) }
+    }
+    tv.addEventListener('click', function (e) {
+      var voir = e.target.closest('a[data-voir]')
+      if (voir && typeof window.PLM_montrerApp === 'function' && window.PLM_montrerApp(voir.getAttribute('data-voir'))) { e.preventDefault(); return }
+      var b = e.target.closest('button'); if (!b) return
+      if (b.hasAttribute('data-recommencer')) { choix = { app: null, postes: null }; $$('.trouver-choix button', tv).forEach(function (x) { x.setAttribute('aria-pressed', 'false') }); $('.trouver-resultat', tv).hidden = true; return etape(1) }
+      var groupe = b.parentElement; $$('button', groupe).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false') })
+      if (b.hasAttribute('data-activite')) {
+        $('.trouver-resultat', tv).hidden = true
+        if (b.getAttribute('data-question') === 'caisse') { choix.app = null; return etape(2) }
+        choix.app = b.getAttribute('data-app'); var e2 = $('[data-etape="2"]', tv); e2.hidden = true
+        $$('.trouver-etape', tv).forEach(function (x) { if (x.getAttribute('data-etape') === '3') x.hidden = false })
+        return
+      }
+      if (b.closest('[data-etape="2"]')) { choix.app = b.getAttribute('data-app'); $$('.trouver-etape', tv).forEach(function (x) { if (x.getAttribute('data-etape') === '3') x.hidden = false }); return }
+      if (b.hasAttribute('data-postes')) { choix.postes = +b.getAttribute('data-postes'); if (choix.app) resultat() }
+    })
+  }
 })()

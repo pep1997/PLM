@@ -421,3 +421,74 @@ p { margin: 0; max-width: 60ch; }
 .menu-mobile .langue { display: inline-flex; min-height: 44px; align-items: center; padding: 0 16px; border-radius: var(--r-pilule); }
 /* Au doigt (téléphone, tablette) : les boutons de devise à 44 px, comme les autres. */
 @media (max-width: 1023px), (pointer: coarse) { .devises button { min-height: 44px; min-width: 52px; } }
+
+/* ── Qualité et caractéristiques techniques (03/10/2026) ────────────
+   Une fiche par logiciel (celle de l'onglet choisi), puis le comparatif :
+   tableau à partir de 900 px, cartes en dessous — jamais de défilement
+   horizontal de la page sur téléphone. */
+.vitrine + .qualite { padding-top: clamp(24px, 4vw, 40px); }
+.qualite + #contact { padding-top: clamp(24px, 4vw, 40px); }
+.qualite-tete { max-width: 760px; margin-bottom: 24px; }
+.qualite-tete h2 { margin: 6px 0 8px; }
+.qualite-fiche { padding: 20px; margin-bottom: 24px; }
+@media (min-width: 768px) { .qualite-fiche { padding: 32px; } }
+.qualite-fiche header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; padding-bottom: 16px; margin-bottom: 8px; border-bottom: 1px solid var(--creme-trait); }
+.qualite-fiche h4, .comparatif h4 { margin: 20px 0 10px; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--encre); }
+.qualite-version { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.pastille { display: inline-flex; align-items: center; min-height: 32px; padding: 4px 14px; border-radius: var(--r-pilule); background: var(--encre); color: var(--creme); font-weight: 700; font-size: .875rem; }
+.pastille-claire { background: var(--orange-3); color: var(--encre); }
+.fiche { display: grid; grid-template-columns: 1fr; gap: 12px 32px; margin: 0; }
+@media (min-width: 768px) { .fiche { grid-template-columns: 1fr 1fr; } }
+.fiche div { display: grid; gap: 2px; padding: 10px 0; border-bottom: 1px solid var(--creme-trait); }
+.fiche dt { font-weight: 700; }
+.fiche dd { margin: 0; color: var(--encre-douce); }
+.coches { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.coches li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; }
+.coches svg, .comparatif svg { width: 16px; height: 16px; }
+.coches time { display: block; font-size: .8125rem; color: var(--encre-douce); margin-top: 2px; }
+.comparatif { padding: 20px; }
+@media (min-width: 768px) { .comparatif { padding: 32px; } }
+.comparatif-tableau { overflow-x: auto; margin-top: 16px; }
+.comparatif-tableau:focus-visible { outline: 3px solid var(--encre); outline-offset: 4px; }
+.comparatif table { width: 100%; border-collapse: collapse; font-size: .9375rem; }
+.comparatif th, .comparatif td { padding: 10px 8px; border-bottom: 1px solid var(--creme-trait); text-align: center; }
+.comparatif thead th { font-size: .8125rem; font-weight: 700; vertical-align: bottom; }
+.comparatif tbody th { text-align: left; font-weight: 600; min-width: 200px; }
+.comparatif td.oui svg { width: 26px; height: 26px; padding: 5px; }
+.comparatif td.non { color: var(--encre-douce); }
+.qualite-note { margin: 16px 0 0; font-size: .875rem; color: var(--encre-douce); }
+
+/* ── Compteurs, comparatif mobile, « Trouvez votre logiciel » (03/10/2026) ── */
+.compteurs { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (min-width: 768px) { .compteurs { gap: 16px; } }
+@media (min-width: 1100px) { .compteurs { grid-template-columns: repeat(4, 1fr); } }
+.compteurs li { background: var(--creme); border-radius: 20px; box-shadow: var(--ombre-chaude); padding: 16px 14px; display: grid; gap: 4px; align-content: center; justify-items: center; text-align: center; }
+.compteur-n { font-size: clamp(2rem, 7vw, 2.75rem); font-weight: 800; line-height: 1; color: var(--encre); font-variant-numeric: tabular-nums; }
+.compteur-l { font-size: .875rem; line-height: 1.35; color: var(--encre-douce); font-weight: 600; }
+.qualite-tests { margin-top: 16px; }
+.qualite-tests summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 700; letter-spacing: .04em; }
+.qualite-tests summary:focus-visible { outline: 3px solid var(--encre); outline-offset: 2px; border-radius: 8px; }
+.comparer-choix { display: grid; gap: 10px; margin-top: 12px; }
+.besoins { display: flex; flex-wrap: wrap; gap: 6px; }
+.besoins button, .trouver-choix button { min-height: 44px; padding: 8px 14px; border-radius: var(--r-pilule); border: 1px solid var(--creme-trait); background: #fff; color: var(--encre); font: inherit; font-size: .9375rem; font-weight: 600; cursor: pointer; }
+.besoins button[aria-pressed="true"], .trouver-choix button[aria-pressed="true"] { background: var(--encre); border-color: var(--encre); color: var(--creme); }
+.besoins button:focus-visible, .trouver-choix button:focus-visible, .comparer-selects select:focus-visible { outline: 3px solid var(--encre); outline-offset: 2px; }
+.comparer-selects { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.comparer-selects label { display: grid; gap: 4px; font-size: .8125rem; font-weight: 700; }
+.comparer-selects select { min-height: 44px; border-radius: 12px; border: 1px solid var(--creme-trait); padding: 0 10px; font: inherit; background: #fff; color: var(--encre); }
+@media (max-width: 899px) {
+  .comparatif-tableau { overflow: visible; }
+  .js .comparatif [data-col]:not(.montre) { display: none; }
+  .comparatif thead th { position: sticky; top: var(--entete, 64px); z-index: 2; background: var(--creme); box-shadow: 0 1px 0 var(--creme-trait); }
+  .comparatif tbody th { min-width: 0; font-size: .875rem; }
+  .comparatif th, .comparatif td { padding: 9px 6px; }
+}
+@media (min-width: 900px) { .comparer-choix { display: none; } }
+.trouver { padding: 20px; margin-top: 24px; }
+@media (min-width: 768px) { .trouver { padding: 32px; } }
+.trouver-q { margin: 16px 0 8px; font-weight: 600; }
+.trouver-choix { display: flex; flex-wrap: wrap; gap: 8px; }
+.trouver-resultat { margin-top: 18px; border-top: 1px solid var(--creme-trait); padding-top: 16px; }
+.trouver-resultat h4 { margin: 4px 0 6px; font-size: 1.375rem; }
+.trouver-resultat .actions { margin-top: 12px; }
+.coches .coche, .comparatif .oui svg { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--orange-1); color: var(--encre); }
