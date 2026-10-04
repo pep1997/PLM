@@ -215,6 +215,16 @@ p { margin: 0; max-width: 60ch; }
 /* ── LE SHOWCASE ── */
 .vitrine { padding: clamp(32px, 5vw, 48px) 0 clamp(16px, 3vw, 24px); }
 .vitrine-tete { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+/* Formation guidée (04/10/2026) : lien commun aux onglets, section sous la vitrine */
+.lien-formation { margin: -8px 0 14px; font-weight: 600; }
+.lien-formation a { color: var(--encre, #16130E); text-decoration: underline; text-underline-offset: 3px; }
+.formation { padding: 8px 0 40px; }
+.formation-carte { display: grid; gap: 20px; padding: 20px; }
+.formation-carte h2 { margin: 6px 0 10px; }
+.formation-carte p { line-height: 1.55; }
+.formation-video { border-radius: 14px; overflow: hidden; }
+.formation-video video { display: block; width: 100%; height: auto; background: #111; }
+@media (min-width: 1024px) { .formation-carte { grid-template-columns: 5fr 7fr; align-items: center; padding: 28px; } }
 .vitrine-tete p { font-size: 1.0625rem; }
 
 /* Onglets en pilules : défilement horizontal aimanté, bords en fondu. */
