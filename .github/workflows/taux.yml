@@ -1,0 +1,27 @@
+# Le taux du dollar du site PLM, mis à jour chaque jour (04/10/2026).
+# Écrit taux.json (lu par assets/site.js) et ne commite que si le taux a changé.
+name: Taux du jour
+on:
+  schedule:
+    - cron: '15 6 * * *'      # chaque jour à 06:15 UTC (après la publication de la BCE de la veille)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  taux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Calculer le taux
+        run: node .github/taux.js
+      - name: Enregistrer si changé
+        run: |
+          if git diff --quiet -- taux.json; then echo "Rien à enregistrer"; exit 0; fi
+          git config user.name "plm-taux"
+          git config user.email "actions@users.noreply.github.com"
+          git add taux.json
+          git commit -m "Taux du jour : $(node -e "console.log(require('./taux.json').usd)") F CFA pour 1 dollar"
+          git push
