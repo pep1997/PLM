@@ -751,5 +751,102 @@
    "hauteur": 2160,
    "duree": 35.2
   }
+ },
+ "residence": {
+  "images": {
+   "residence/03-planning": {
+    "largeur": 4500,
+    "hauteur": 3018,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/08-loyers": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/02-reception": {
+    "largeur": 4500,
+    "hauteur": 3330,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/05-fiche-sejour": {
+    "largeur": 4500,
+    "hauteur": 3330,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/06-logements": {
+    "largeur": 4500,
+    "hauteur": 3723,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/09-debiteurs": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/10-statistiques": {
+    "largeur": 4500,
+    "hauteur": 4341,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/07-menage": {
+    "largeur": 4500,
+    "hauteur": 4341,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 35.2
+  }
  }
 }
