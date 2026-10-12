@@ -841,6 +841,17 @@
      2560,
      3840
     ]
+   },
+   "residence/11-carte-des-biens": {
+    "largeur": 4500,
+    "hauteur": 4341,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
    }
   },
   "video": {
