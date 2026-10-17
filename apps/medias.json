@@ -789,7 +789,7 @@
    },
    "residence/05-fiche-sejour": {
     "largeur": 4500,
-    "hauteur": 3330,
+    "hauteur": 3000,
     "largeurs": [
      640,
      1280,
@@ -845,6 +845,105 @@
    "residence/11-carte-des-biens": {
     "largeur": 4500,
     "hauteur": 4341,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/01-carte-des-biens": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/17-carte-terrains-satellite": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/18-carte-3d": {
+    "largeur": 4500,
+    "hauteur": 3831,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/13-fiche-lotissement": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/14-dossier-foncier": {
+    "largeur": 4500,
+    "hauteur": 4341,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/16-vente-terrain": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/02-planning-meuble": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/04-loyers-du-mois": {
+    "largeur": 4500,
+    "hauteur": 3174,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "residence/03-accueil": {
+    "largeur": 4500,
+    "hauteur": 3387,
     "largeurs": [
      640,
      1280,
