@@ -370,20 +370,25 @@
     ]
    },
    "depot/27-reservation": {
-    "largeur": 1170,
-    "hauteur": 1686,
-    "largeurs": [
-     640,
-     1170
-    ]
-   },
-   "depot/29-compte-client": {
-    "largeur": 1320,
-    "hauteur": 2172,
+    "largeur": 4500,
+    "hauteur": 2820,
     "largeurs": [
      640,
      1280,
-     1320
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "depot/29-compte-client": {
+    "largeur": 4500,
+    "hauteur": 2820,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
     ]
    },
    "depot/40-scan-telephone": {
