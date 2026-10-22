@@ -88,6 +88,28 @@
      2560,
      3840
     ]
+   },
+   "restaurant/40-scan-telephone": {
+    "largeur": 4500,
+    "hauteur": 2700,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "restaurant/41-scan-panier": {
+    "largeur": 4500,
+    "hauteur": 2700,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
    }
   },
   "video": {
@@ -167,6 +189,28 @@
    "maquis/24-fiche-employe": {
     "largeur": 4500,
     "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "maquis/40-scan-telephone": {
+    "largeur": 4500,
+    "hauteur": 2700,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "maquis/41-scan-panier": {
+    "largeur": 4500,
+    "hauteur": 2700,
     "largeurs": [
      640,
      1280,
@@ -341,6 +385,28 @@
      1280,
      1320
     ]
+   },
+   "depot/40-scan-telephone": {
+    "largeur": 4500,
+    "hauteur": 2700,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "depot/41-scan-panier": {
+    "largeur": 4500,
+    "hauteur": 2700,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
    }
   },
   "video": {
@@ -418,11 +484,36 @@
     ]
    },
    "commerce/27-reservation": {
-    "largeur": 1170,
-    "hauteur": 1686,
+    "largeur": 4500,
+    "hauteur": 2820,
     "largeurs": [
      640,
-     1170
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "commerce/40-scan-telephone": {
+    "largeur": 4500,
+    "hauteur": 2700,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "commerce/41-scan-panier": {
+    "largeur": 4500,
+    "hauteur": 2700,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
     ]
    }
   },
@@ -501,6 +592,17 @@
    "stock/14-rentabilite-mois": {
     "largeur": 4500,
     "hauteur": 2379,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "stock/40-scan-telephone": {
+    "largeur": 4500,
+    "hauteur": 2700,
     "largeurs": [
      640,
      1280,
