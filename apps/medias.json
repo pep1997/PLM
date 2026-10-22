@@ -575,12 +575,14 @@
     ]
    },
    "stock/29-compte-client": {
-    "largeur": 1320,
-    "hauteur": 624,
+    "largeur": 4500,
+    "hauteur": 2820,
     "largeurs": [
      640,
      1280,
-     1320
+     1920,
+     2560,
+     3840
     ]
    },
    "stock/10-rentabilite": {
