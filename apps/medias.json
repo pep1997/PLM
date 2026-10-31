@@ -3,7 +3,7 @@
   "images": {
    "restaurant/03-caisse": {
     "largeur": 4500,
-    "hauteur": 4062,
+    "hauteur": 4299,
     "largeurs": [
      640,
      1280,
@@ -338,7 +338,7 @@
    },
    "depot/03-caisse": {
     "largeur": 4500,
-    "hauteur": 2979,
+    "hauteur": 2958,
     "largeurs": [
      640,
      1280,
@@ -424,7 +424,7 @@
   "images": {
    "commerce/26-choix-metier": {
     "largeur": 4500,
-    "hauteur": 3318,
+    "hauteur": 3510,
     "largeurs": [
      640,
      1280,
@@ -446,7 +446,7 @@
    },
    "commerce/10-codes-barres": {
     "largeur": 4500,
-    "hauteur": 3381,
+    "hauteur": 3489,
     "largeurs": [
      640,
      1280,
@@ -554,7 +554,7 @@
    },
    "stock/06-achats": {
     "largeur": 4500,
-    "hauteur": 3690,
+    "hauteur": 3702,
     "largeurs": [
      640,
      1280,
@@ -565,7 +565,7 @@
    },
    "stock/28-reservations": {
     "largeur": 4344,
-    "hauteur": 1767,
+    "hauteur": 1239,
     "largeurs": [
      640,
      1280,
@@ -1030,7 +1030,7 @@
    },
    "residence/04-loyers-du-mois": {
     "largeur": 4500,
-    "hauteur": 3174,
+    "hauteur": 3000,
     "largeurs": [
      640,
      1280,
