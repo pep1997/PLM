@@ -1274,5 +1274,124 @@
    "hauteur": 2160,
    "duree": 39.6
   }
+ },
+ "pressing": {
+  "images": {
+   "pressing/01-aujourdhui": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "pressing/02-nouveau-depot": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "pressing/03-suivi-telephone": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "pressing/04-retrait": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "pressing/05-fiche-depot": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "pressing/06-ticket-etiquettes": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "pressing/07-alertes": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "pressing/08-depots": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "pressing/09-caisse": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "pressing/10-connexion": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 39.6
+  }
  }
 }
