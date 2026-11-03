@@ -110,6 +110,17 @@
      2560,
      3840
     ]
+   },
+   "patron/01-patron-telephone": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
    }
   },
   "video": {
@@ -218,6 +229,17 @@
      2560,
      3840
     ]
+   },
+   "patron/01-patron-telephone": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
    }
   },
   "video": {
@@ -297,6 +319,17 @@
    "hotel/24-fiche-employe": {
     "largeur": 4500,
     "hauteur": 4500,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "patron/01-patron-telephone": {
+    "largeur": 4500,
+    "hauteur": 3000,
     "largeurs": [
      640,
      1280,
@@ -412,6 +445,17 @@
      2560,
      3840
     ]
+   },
+   "patron/01-patron-telephone": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
    }
   },
   "video": {
@@ -520,6 +564,17 @@
      2560,
      3840
     ]
+   },
+   "patron/01-patron-telephone": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
    }
   },
   "video": {
@@ -617,6 +672,17 @@
      2560,
      3840
     ]
+   },
+   "patron/01-patron-telephone": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
    }
   },
   "video": {
@@ -696,6 +762,17 @@
    "clinique/13-ecran-salle-attente": {
     "largeur": 3840,
     "hauteur": 2160,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "patron/01-patron-telephone": {
+    "largeur": 4500,
+    "hauteur": 3000,
     "largeurs": [
      640,
      1280,
@@ -1042,6 +1119,147 @@
    "residence/03-accueil": {
     "largeur": 4500,
     "hauteur": 3318,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "patron/01-patron-telephone": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 39.6
+  }
+ },
+ "flotte": {
+  "images": {
+   "flotte/02-tableau-du-jour": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/12-application-chauffeur": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/03-versements-a-confirmer": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/05-releves-photos": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/04-carte-en-direct": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/08-contrat-semaine": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/09-contrat-imprimable": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/06-fiche-vehicule": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/07-rentabilite": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/10-affiche-application": {
+    "largeur": 4500,
+    "hauteur": 3000,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "flotte/11-tableau-nuit": {
+    "largeur": 4500,
+    "hauteur": 3000,
     "largeurs": [
      640,
      1280,
