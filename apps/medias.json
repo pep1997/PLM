@@ -1393,5 +1393,102 @@
    "hauteur": 2160,
    "duree": 39.6
   }
+ },
+ "transport": {
+  "images": {
+   "transport/01-guichet": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "transport/02-billet-80mm": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "transport/03-controle": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "transport/04-voyages-du-jour": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "transport/05-fiche-voyage": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "transport/06-planning": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "transport/07-caisse": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   },
+   "transport/08-alertes": {
+    "largeur": 4500,
+    "hauteur": 2813,
+    "largeurs": [
+     640,
+     1280,
+     1920,
+     2560,
+     3840
+    ]
+   }
+  },
+  "video": {
+   "largeur": 3840,
+   "hauteur": 2160,
+   "duree": 39.6
+  }
  }
 }
